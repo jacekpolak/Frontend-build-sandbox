@@ -2,7 +2,7 @@ import $ from 'jquery';
 import Factory from 'helpers/Factory.js';
 
 /**
- *
+ * Creates component's instance and places it to meta data
  * @param node {Element}
  * @param type {String}
  * @returns {Element}

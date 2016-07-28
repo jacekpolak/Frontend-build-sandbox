@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 /**
- *
+ * Removes component instance from elements meta data
  * @param node {Element}
  * @param type {String}
  * @returns {Element}
