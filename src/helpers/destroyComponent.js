@@ -8,9 +8,6 @@ import $ from 'jquery';
  */
 export default (node, type) => {
     const data = $.data(node);
-    const component = data.components[type];
-
-    component.destroy();
 
     delete data.components[type];
 
