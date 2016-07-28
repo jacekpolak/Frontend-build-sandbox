@@ -3,8 +3,10 @@
 // Define dependencies on top of the module
 import $ from 'jquery';
 import { throttle } from 'lodash';
+import { EVENTS } from 'constants';
 import Base from 'components/base/base.js';
 import Factory from 'helpers/Factory.js';
+import pubsub from 'helpers/pubsub.js';
 import destroyComponent from 'helpers/destroyComponent.js';
 
 // Then define Component's defaults
@@ -66,8 +68,13 @@ class Component extends Base {
         // NOTE: Use debounce for events like 'change', 'keyup'
         this.elements.$window.on(`scroll.${this.options.NAME_SPACE}`,
             throttle(this.handleScroll.bind(this), this.options.THROTTLE));
+
+        pubsub(EVENTS.LOGIN).subscribe(this.onApiReturn.bind(this));
     }
 
+    onApiReturn(data) {
+        console.log(data);
+    }
     /**
      * Handles click event
      * @param event {Object}
