@@ -71,8 +71,6 @@ class Component {
     handleClick(event) {
         event.preventDefault();
 
-        console.log(this.elements.$child);
-
         this.elements.$child.toggleClass(this.options.MODIFIERS.ACTIVE);
     }
 
@@ -95,6 +93,7 @@ class Component {
 
         // NOTE: Use destroyComponent helper to delete Component's instance from memory
         destroyComponent(this.elements.$root.get(0), 'Component');
+
         return this.elements.$root;
     }
 }
