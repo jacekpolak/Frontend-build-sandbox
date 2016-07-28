@@ -3,6 +3,7 @@
 // Define dependencies on top of the module
 import $ from 'jquery';
 import { throttle } from 'lodash';
+import Base from 'components/base/base.js';
 import Factory from 'helpers/Factory.js';
 import destroyComponent from 'helpers/destroyComponent.js';
 
@@ -17,16 +18,19 @@ const DEFAULTS = {
         ACTIVE: 'component_state_active'
     },
     // Always define namespace for util usage (events ns etc)
-    NAME_SPACE: 'component',
+    NAME_SPACE: '.component',
     THROTTLE: 200
 };
 
-class Component {
+// WARN: Always extend Base component to provide shared API (see Base class)
+class Component extends Base {
     /**
      * Constructor
      * @param node {element} - root element for Component's scope
      */
     constructor(node) {
+        super(node);
+
         const $root = $(node);
         const options = $root.data('options') || {};
 
@@ -54,7 +58,7 @@ class Component {
         // NOTE: Use 'bind' to prevent context change
         // NOTE: Use 'on' API to delegate event handlers,
         // It's also helpful to remove listeners in one call on the $root jQuery object
-        this.elements.$root.on(`click.${this.options.NAME_SPACE}`,
+        this.elements.$root.on(`click${this.options.NAME_SPACE}`,
             this.options.SELECTORS.CHILD,
             this.handleClick.bind(this));
 
@@ -88,13 +92,11 @@ class Component {
      * @returns {Object} - jQuery $root object
      */
     destroy() {
-        // Remove event listeners by namespace on each node
-        Object.keys(this.elements).forEach($node => $node.off(this.options.NAME_SPACE));
+        // NOTE: Call super.destroy to remove listeners etc
+        super.destroy();
 
         // NOTE: Use destroyComponent helper to delete Component's instance from memory
         destroyComponent(this.elements.$root.get(0), 'Component');
-
-        return this.elements.$root;
     }
 }
 

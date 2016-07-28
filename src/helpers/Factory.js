@@ -29,7 +29,7 @@ export default (() => {
     }
 
     /**
-     *
+     * Returns Component constructor if exists
      * @param type {String}
      * @returns {class}
      */
