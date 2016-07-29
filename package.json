@@ -17,8 +17,9 @@
       "js"
     ],
     "moduleNameMapper": {
-      "^.+\\.(css|less)$": "<rootDir>/src/mocks/styleMock.js",
+      "^.+\\.(css|less|scss)$": "<rootDir>/src/mocks/styleMock.js",
       "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/src/mocks/fileMock.js",
+      "^.+\\.(hbs)$": "<rootDir>/src/mocks/templateMock.js",
       "helpers": "<rootDir>/src/helpers",
       "components": "<rootDir>/src/components",
       "constants": "<rootDir>/src/constants/constants.js"

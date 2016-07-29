@@ -27,8 +27,9 @@ const DEFAULTS = {
     THROTTLE: 200
 };
 
+// NOTE: export need for tests
 // WARN: Always extend Base component to provide shared API (see Base class)
-class Component extends Base {
+export class Component extends Base {
     /**
      * Constructor
      * @param node {element} - root element for Component's scope
