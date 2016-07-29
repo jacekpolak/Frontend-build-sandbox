@@ -1,1 +1,41 @@
+/* colors named via Named via http://chir.ag/projects/name-that-color */
+
 /* base colors */
+$primary: #034580;
+$secondary: #eb174b;
+$tertiary: #008fc5;
+
+/* accent colours (highlights and backgrounds) */
+$seaGreen: #2d9c49;
+$disco: #731472;
+$divie: #e99619;
+$gold: #fad000;
+$buddhaGold: #b9b309;
+$paleOyster: #9a8c7e;
+
+/* typography and backgrounds */
+$scarpaFlow: #56565a;
+$gray: #818181;
+$alto: #dadada;
+$gallery: #ededed;
+$alabaster: #f7f7f7;
+$white: #fff;
+
+/* brand product colors */
+$artistry: #a29061;
+$bodykey: #006325;
+$espring: #adc5e6;
+$home: #4e8e2c;
+$nutrilite: #0b6527;
+$satinique: #919295;
+$truvivity: #87c3c4;
+
+/* common variables */
+$baseFontColor: $scarpaFlow;
+$baseLinkColor: $primary;
+
+
+$mobile           : 767px;
+$tablet           : 991px;
+$desktop          : 1200px;
+$large-desktop    : 1900px;

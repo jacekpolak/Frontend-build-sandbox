@@ -1,3 +1,45 @@
+/* main reset */
+body{
+	margin: 0;
+	color: $baseFontColor;
+	position: relative;
+	background: $white;
+	font: 400 18px/1.5 arial;
+	min-width: 320px;
+}
+
+a{
+	text-decoration: none;
+	color: $baseLinkColor;
+	&:hover{
+		text-decoration: none;
+		color: $baseLinkColor;
+	}
+	&[href*="tel:"]{
+		cursor: default;
+		color: inherit;
+	}
+}
+
+img{
+	border-style: none;
+	vertical-align: top;
+	max-width: 100%;
+}
+
+q{quotes:none;}
+q:before{content:'';}
+q:after{content:'';}
+
 *{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+aside,
+nav,
+footer,
+header,
+article,
+section {display: block}

@@ -2,8 +2,6 @@
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/mixins';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap/grid';
 
-@import 'base/reset';
-@import 'base/mixins';
 @import 'base/variables';
-
-@import 'vendor/jquery-ui';
+@import 'base/mixins';
+@import 'base/reset';
