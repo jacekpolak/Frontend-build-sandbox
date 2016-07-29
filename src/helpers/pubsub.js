@@ -1,5 +1,9 @@
 import $ from 'jquery';
 
+// Example usage:
+// pubsub(id).subscribe(listener);
+// pubsub(id).publish(id, [, data])
+// pubsub(id).unsubscribe(listener);
 export default (() => {
     const topics = {};
 

@@ -7,12 +7,12 @@ import { EVENTS } from 'constants';
 import Base from 'components/base/base.js';
 import Factory from 'helpers/Factory.js';
 import pubsub from 'helpers/pubsub.js';
-import destroyComponent from 'helpers/destroyComponent.js';
 
 // Then define Component's defaults
 // Use uppercase for all keys and sub-keys
 const DEFAULTS = {
     SELECTORS: {
+        // NOTE: Use only js-hooks to elements
         CHILD: '.js-child'
     },
     MODIFIERS: {
@@ -69,6 +69,7 @@ class Component extends Base {
         this.elements.$window.on(`scroll.${this.options.NAME_SPACE}`,
             throttle(this.handleScroll.bind(this), this.options.THROTTLE));
 
+        // NOTE: Example of pubsub usage
         pubsub(EVENTS.LOGIN).subscribe(this.onApiReturn.bind(this));
     }
 
@@ -82,6 +83,7 @@ class Component extends Base {
     handleClick(event) {
         event.preventDefault();
 
+        this.destroy();
         this.elements.$child.toggleClass(this.options.MODIFIERS.ACTIVE);
     }
 
@@ -93,18 +95,17 @@ class Component extends Base {
         console.log(event);
     }
 
-    // NOTE: Always provide public destroy method - it's necessary for Components Factory
     /**
      * Removes listeners and all descriptions
      * @returns {Object} - jQuery $root object
      */
     destroy() {
-        // NOTE: Call super.destroy to remove listeners etc
-        super.destroy();
+        // Assume here could be plugins destroying & other util stuff
 
-        // NOTE: Use destroyComponent helper to delete Component's instance from memory
-        destroyComponent(this.elements.$root.get(0), 'Component');
+        // NOTE: If override destroy method
+        // Call super.destroy at the and of method to remove listeners, modifiers etc.
+        super.destroy();
     }
 }
 
-export default Factory.registerComponent('Component', Component);
+export default Factory.registerComponent(Component);
