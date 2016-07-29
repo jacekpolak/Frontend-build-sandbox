@@ -7,13 +7,16 @@ import { EVENTS } from 'constants';
 import Base from 'components/base/base.js';
 import Factory from 'helpers/Factory.js';
 import pubsub from 'helpers/pubsub.js';
+import template from './component.hbs';
 
 // Then define Component's defaults
 // Use uppercase for all keys and sub-keys
 const DEFAULTS = {
     SELECTORS: {
         // NOTE: Use only js-hooks to elements
-        CHILD: '.js-child'
+        CHILD: '.js-child',
+        SHOW_LIST: '.js-show-list',
+        LIST: '.js-list-portal'
     },
     MODIFIERS: {
         // This should be related to CSS Style Guide: BEM modifier definition
@@ -46,7 +49,8 @@ class Component extends Base {
         this.elements = {
             $root,
             $window: $(window),
-            $child: $root.find(this.options.SELECTORS.CHILD)
+            $child: $root.find(this.options.SELECTORS.CHILD),
+            $list: $root.find(this.options.SELECTORS.LIST)
         };
 
         // If we need some actions on initialization call it in constructor
@@ -60,9 +64,13 @@ class Component extends Base {
         // NOTE: Use 'bind' to prevent context change
         // NOTE: Use 'on' API to delegate event handlers,
         // It's also helpful to remove listeners in one call on the $root jQuery object
-        this.elements.$root.on(`click${this.options.NAME_SPACE}`,
-            this.options.SELECTORS.CHILD,
-            this.handleClick.bind(this));
+        this.elements.$root
+            .on(`click${this.options.NAME_SPACE}`,
+                this.options.SELECTORS.CHILD,
+                this.handleClick.bind(this))
+            .on(`click${this.options.NAME_SPACE}`,
+                this.options.SELECTORS.SHOW_LIST,
+                this.render.bind(this));
 
         // NOTE: Use throttle for events like 'scroll', 'resize'
         // NOTE: Use debounce for events like 'change', 'keyup'
@@ -93,6 +101,25 @@ class Component extends Base {
      */
     handleScroll(event) {
         console.log(event);
+    }
+
+    render() {
+        // NOTE: Mock data
+        const html = template({
+            entries: [
+                {
+                    value: 'Item 1'
+                },
+                {
+                    value: 'Item 2'
+                },
+                {
+                    value: 'Item 3'
+                }
+            ]
+        });
+
+        this.elements.$list.html(html);
     }
 
     /**
