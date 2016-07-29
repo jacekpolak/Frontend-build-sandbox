@@ -3,20 +3,19 @@ export default (() => {
 
     /**
      * Registers Constructor to Factory
-     * @param type {String} - Constructor key
      * @param Component {class}
      */
-    function registerComponent(type, Component) {
+    function registerComponent(Component) {
         const proto = Component.prototype;
 
         if (!proto.destroy) {
-            throw new Error(`'destroy' method wasn't provide for a Component ${type}`);
+            throw new Error(`'destroy' method wasn't provide for a Component ${Component.name}`);
         }
 
-        if (!Components[type]) {
-            Components[type] = Component;
+        if (!Components[Component.name]) {
+            Components[Component.name] = Component;
         } else {
-            console.warn(`Trying to register Component ${type} twice.`);
+            console.warn(`Trying to register Component ${Component.name} twice.`);
         }
     }
 

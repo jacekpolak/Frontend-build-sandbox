@@ -1,9 +1,8 @@
 // NOTE: Such files could be populated to take each page's bundle
-import start from 'helpers/start.js';
-import Factory from 'helpers/Factory.js';
+import bootstrap from 'helpers/bootstrap.js';
 
-import 'components/component.js';
+import 'components/component/component.js';
 import './scss/app.scss';
 
 // Lights, camera, action!
-start(Factory);
+bootstrap();
