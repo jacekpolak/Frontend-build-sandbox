@@ -2,5 +2,5 @@
 
 module.exports = {
     test: /\.hbs$/,
-    loader: 'handlebars-loader' 
+    loader: 'handlebars-loader?runtime=handlebars/runtime'
 };

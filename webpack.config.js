@@ -19,7 +19,8 @@ module.exports = {
 
     externals: {
         'jquery': '$',
-        'lodash': '_'
+        'lodash': '_',
+        'handlebars/runtime': 'Handlebars'
     },
 
     watch: NODE_ENV === 'development',
