@@ -17,6 +17,11 @@ module.exports = {
         publicPath: './'
     },
 
+    externals: {
+        'jquery': '$',
+        'lodash': '_'
+    },
+
     watch: NODE_ENV === 'development',
 
     watchOptions: {
