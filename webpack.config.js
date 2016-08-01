@@ -7,7 +7,7 @@ module.exports = {
     context: path.join(__dirname, '/src'),
 
     entry: {
-        'app': './app.js'
+        'app': './js/app.js'
     },
 
     output: {
@@ -33,9 +33,9 @@ module.exports = {
 
     resolve: {
         alias: {
-            helpers: path.resolve('./src/helpers'),
-            components: path.resolve('./src/components'),
-            constants: path.resolve('./src/constants/constants.js')
+            helpers: path.resolve('./src/js/helpers'),
+            components: path.resolve('./src/js/components'),
+            constants: path.resolve('./src/js/constants/constants.js')
         }
     },
 

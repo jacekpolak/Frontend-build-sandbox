@@ -2,7 +2,7 @@
 import bootstrap from 'helpers/bootstrap.js';
 
 import 'components/component/component.js';
-import './scss/app.scss';
+import './../scss/app.scss';
 
 // Lights, camera, action!
 bootstrap();

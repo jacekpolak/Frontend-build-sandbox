@@ -11,6 +11,8 @@ export default (root = document) => {
 
     console.log('App bootstrap started.');
 
+    // NOTE: IE11 doesn't support 'forEach' for a NodeList
+    // WARN: Hacky stuff here, might be replaced by regular loop because of performance reasons
     Array.prototype.forEach.call(root.querySelectorAll(UTILS.COMPONENTS_QUERY), node => {
         const components = node.dataset.components;
 
