@@ -6,3 +6,14 @@
 @mixin font-size($size) {
     font-size: calculateRem($size);
 }
+
+@mixin setBgColorAndHover($baseColor) {
+    background-color: $baseColor;
+
+    /* we use :not(.btn--disabled) to prevent hover and active states for disabled btn */
+    &:not(.btn--disabled):active,
+    &:not(.btn--disabled):hover{
+        background-color: darken($baseColor, 10%);
+    }
+}
+

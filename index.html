@@ -11,43 +11,80 @@
 <!-- NOTE: Could be space-separated multiple components -->
 <!-- NOTE: Extra options could be provided via data-options attribute with key for each Component options -->
 <!-- NOTE: Please be aware data-options should have a valid JSON value -->
-<div data-components="Component" data-options='{"Component": {"option": "value"}}'>
-    <h3>My Awesome Component</h3>
-    <div class="js-child">Destroy Component</div>
-    <div class="js-show-list">Render list</div>
-    <ul class="js-list-portal"></ul>
+<div class="container">
+    <div data-components="Component" data-options='{"Component": {"option": "value"}}'>
+        <h3>My Awesome Component</h3>
+        <div class="js-child">Destroy Component</div>
+        <div class="js-show-list">Render list</div>
+        <ul class="js-list-portal"></ul>
+    
+        <h1>H1 title</h1>
+        <h1 class="h1-title--flood">H1 title flood</h1>
+        <h2>H2 title</h2>
+        <h3>H3 title</h3>
+        <h4>H4 title</h4>
+        <h5>H5 title</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, similique. Mollitia, rerum, cupiditate. Beatae asperiores, facilis, amet ipsam <a href="#">recusandae</a> aspernatur nulla error architecto aliquam aut accusamus fuga a repellendus magni!</p>
+    
+        <blockquote>
+            <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque blanditiis adipisci qui vitae sed repellat rerum asperiores earum porro, dolore, quasi fuga optio facilis ipsam quia dolor architecto natus placeat.</q>
+            <cite>Title</cite>
+        </blockquote>
 
-    <h1>H1 title</h1>
-    <h1 class="h1-title--flood">H1 title flood</h1>
-    <h2>H2 title</h2>
-    <h3>H3 title</h3>
-    <h4>H4 title</h4>
-    <h5>H5 title</h5>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, similique. Mollitia, rerum, cupiditate. Beatae asperiores, facilis, amet ipsam <a href="#">recusandae</a> aspernatur nulla error architecto aliquam aut accusamus fuga a repellendus magni!</p>
+        <ul class="bullet-list">
+            <li class="bullet-list__item">Bullet list</li>
+            <li class="bullet-list__item">Bullet list</li>
+            <li class="bullet-list__item">Bullet list
+                <ul class="bullet-list bullet-list--nested">
+                    <li class="bullet-list__item">Bullet list</li>
+                    <li class="bullet-list__item">Bullet list</li>
+                </ul>
+            </li>
+        </ul>
 
-    <blockquote>
-        <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque blanditiis adipisci qui vitae sed repellat rerum asperiores earum porro, dolore, quasi fuga optio facilis ipsam quia dolor architecto natus placeat.</q>
-        <cite>Title</cite>
-    </blockquote>
+        <ol class="num-list">
+            <li class="num-list__item">Num list</li>
+            <li class="num-list__item">Num list</li>
+            <li class="num-list__item">Num list</li>
+        </ol>
 
-    <ul class="bullet-list">
-        <li class="bullet-list__item">Bullet list</li>
-        <li class="bullet-list__item">Bullet list</li>
-        <li class="bullet-list__item">Bullet list
-            <ul class="bullet-list bullet-list--nested">
-                <li class="bullet-list__item">Bullet list</li>
-                <li class="bullet-list__item">Bullet list</li>
-            </ul>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="#" class="btn btn--primary"><span>Primary</span></a>
+                <a href="#" class="btn btn--primary btn--sm"><span>Primary</span></a>
+                <a href="#" class="btn btn--primary btn--lg"><span>Primary</span></a>
+                <a href="#" class="btn btn--primary btn--lg btn--disabled"><span>Primary</span></a>
+            </li>
+            <li>
+                <a href="#" class="btn btn--secondary"><span>Primary</span></a>
+                <a href="#" class="btn btn--secondary btn--sm"><span>Primary</span></a>
+                <a href="#" class="btn btn--secondary btn--lg"><span>Primary</span></a>
+                <a href="#" class="btn btn--secondary btn--lg btn--disabled"><span>Primary</span></a>
+            </li>
+            <li>
+                <a href="#" class="btn btn--tertiary"><span>Primary</span></a>
+                <a href="#" class="btn btn--tertiary btn--sm"><span>Primary</span></a>
+                <a href="#" class="btn btn--tertiary btn--lg"><span>Primary</span></a>
+                <a href="#" class="btn btn--on-dark btn--lg btn--disabled"><span>Primary</span></a>
+            </li>
+        </ul>
 
-    <ol class="num-list">
-        <li class="num-list__item">Num list</li>
-        <li class="num-list__item">Num list</li>
-        <li class="num-list__item">Num list</li>
-    </ol>
+        <form class="form" action="#">
+            <div class="form__row">
+                <div class="form__input-holder">
+                    <input class="form__input" type="text" placeholder="Inactive">
+                </div>
+                <div class="form__input-holder">
+                    <input class="input" type="search">
+                </div>
+                <div class="form__input-holder">
+                    <input class="input" type="search">
+                </div>
 
+            </div>
+        </form>
 
+    </div>
 </div>
 
 <!-- NOTE: Define external libs -->

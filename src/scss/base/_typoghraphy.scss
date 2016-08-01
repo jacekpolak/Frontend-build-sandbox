@@ -108,16 +108,24 @@ ul,
     padding: 0;
     list-style: none;
 
+    li,
     &__item {
+        padding: 0 0 0 19px;
+        position: relative;
 
         &:before {
-            content: '-';
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 4px 0 0;
+            content: '';
+            width: 8px;
+            height: 1px;
+            background-color: $borderFouthColor;
+            position: absolute;
+            top: 11px;
+            left: 0;
         }
     }
 
+
+    ul,
     &--nested {
         padding: 0 0 0 10px;
     }
@@ -131,8 +139,8 @@ ol,
     list-style: none;
     counter-reset: list;
 
+    li,
     &__item {
-
         &:before {
             counter-increment: list;
             content: counters(list,".") ".";
@@ -142,6 +150,7 @@ ol,
         }
     }
 
+    ol,
     &--nested {
         padding: 0 0 0 10px;
     }
