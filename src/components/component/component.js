@@ -136,4 +136,4 @@ export class Component extends Base {
     }
 }
 
-export default Factory.registerComponent(Component);
+export default Factory.registerComponent('Component', Component);
