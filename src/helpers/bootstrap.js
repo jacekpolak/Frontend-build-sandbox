@@ -11,7 +11,7 @@ export default (root = document) => {
 
     console.log('App bootstrap started.');
 
-    root.querySelectorAll(UTILS.COMPONENTS_QUERY).forEach(node => {
+    Array.prototype.forEach.call(root.querySelectorAll(UTILS.COMPONENTS_QUERY), node => {
         const components = node.dataset.components;
 
         components.split(' ').forEach(type => {
