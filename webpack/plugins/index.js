@@ -6,7 +6,8 @@ module.exports = [
     require('./chunks'),
     require('./define'),
     require('./extract-text'),
-    require('./provide')
+    require('./provide'),
+    require('./svg')
 ];
 
 if (NODE_ENV === 'production') {

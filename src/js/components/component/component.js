@@ -51,9 +51,11 @@ export class Component extends Base {
             $root,
             $window: $(window),
             $child: $root.find(this.options.SELECTORS.CHILD),
-            $list: $root.find(this.options.SELECTORS.LIST)
+            $list: $root.find(this.options.SELECTORS.LIST),
+            $datepicker: $root.find(this.options.SELECTORS.DATEPICKER)
         };
 
+        this.initPlugins();
         // If we need some actions on initialization call it in constructor
         this.attachEvents();
     }
@@ -80,6 +82,10 @@ export class Component extends Base {
 
         // NOTE: Example of pubsub usage
         pubsub(EVENTS.LOGIN).subscribe(this.onApiReturn.bind(this));
+    }
+
+    initPlugins() {
+        this.elements.$datepicker.datepicker();
     }
 
     onApiReturn(data) {
