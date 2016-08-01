@@ -20,6 +20,7 @@ module.exports = {
     externals: {
         'jquery': '$',
         'lodash': '_',
+        'jquery-ui': '{}',
         'handlebars/runtime': 'Handlebars'
     },
 

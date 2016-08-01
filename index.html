@@ -11,25 +11,45 @@
 <!-- NOTE: Could be space-separated multiple components -->
 <!-- NOTE: Extra options could be provided via data-options attribute with key for each Component options -->
 <!-- NOTE: Please be aware data-options should have a valid JSON value -->
-<div class="container">
-    <div data-components="Component" data-options='{"Component": {"option": "value"}}'>
-        <h3>My Awesome Component</h3>
-        <div class="js-child">Destroy Component</div>
-        <div class="js-show-list">Render list</div>
-        <ul class="js-list-portal"></ul>
-    
-        <h1>H1 title</h1>
-        <h1 class="h1-title--flood">H1 title flood</h1>
-        <h2>H2 title</h2>
-        <h3>H3 title</h3>
-        <h4>H4 title</h4>
-        <h5>H5 title</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, similique. Mollitia, rerum, cupiditate. Beatae asperiores, facilis, amet ipsam <a href="#">recusandae</a> aspernatur nulla error architecto aliquam aut accusamus fuga a repellendus magni!</p>
-    
-        <blockquote>
-            <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque blanditiis adipisci qui vitae sed repellat rerum asperiores earum porro, dolore, quasi fuga optio facilis ipsam quia dolor architecto natus placeat.</q>
-            <cite>Title</cite>
-        </blockquote>
+
+<div data-components="Component" data-options='{"Component": {"option": "value"}}'>
+    <h3>My Awesome Component</h3>
+    <div class="js-child">Destroy Component</div>
+    <div class="js-show-list">Render list</div>
+    <svg class="svg-icon">
+        <use xlink:href="#amway-icons-5-a-day"></use>
+    </svg>
+    <ul class="js-list-portal"></ul>
+
+    <h1>H1 title</h1>
+    <h1 class="h1-title--flood">H1 title flood</h1>
+    <h2>H2 title</h2>
+    <h3>H3 title</h3>
+    <h4>H4 title</h4>
+    <h5>H5 title</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, similique. Mollitia, rerum, cupiditate. Beatae asperiores, facilis, amet ipsam <a href="#">recusandae</a> aspernatur nulla error architecto aliquam aut accusamus fuga a repellendus magni!</p>
+
+    <blockquote>
+        <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque blanditiis adipisci qui vitae sed repellat rerum asperiores earum porro, dolore, quasi fuga optio facilis ipsam quia dolor architecto natus placeat.</q>
+        <cite>Title</cite>
+    </blockquote>
+
+    <ul class="bullet-list">
+        <li class="bullet-list__item">Bullet list</li>
+        <li class="bullet-list__item">Bullet list</li>
+        <li class="bullet-list__item">Bullet list
+            <ul class="bullet-list bullet-list--nested">
+                <li class="bullet-list__item">Bullet list</li>
+                <li class="bullet-list__item">Bullet list</li>
+            </ul>
+        </li>
+    </ul>
+
+    <ol class="num-list">
+        <li class="num-list__item">Num list</li>
+        <li class="num-list__item">Num list</li>
+        <li class="num-list__item">Num list</li>
+    </ol>
 
         <ul class="bullet-list">
             <li class="bullet-list__item">Bullet list</li>
@@ -87,10 +107,15 @@
     </div>
 </div>
 
+<div data-components="Component1">
+    <input class="js-datepicker">
+</div>
+
 <!-- NOTE: Define external libs -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 
 <!-- NOTE: Define bundles -->
 <script src="build/common.js"></script>
