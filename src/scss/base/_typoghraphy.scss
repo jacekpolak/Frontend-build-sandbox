@@ -1,0 +1,87 @@
+/* title styles */
+
+h1,
+.h1-title{
+	margin: 0;
+	font-size: 48px;
+	font-family: $franklin-medium-cd;
+	font-weight: normal;
+	&--flood{
+		font-family: $flood;
+	}
+}
+h2,
+.h2-title{
+	margin: 0;
+	font-size: 32px;
+	font-family: $franklin-medium-cd;
+	font-weight: normal;
+}
+h3,
+.h3-title{
+	margin: 0;
+	font-size: 28px;
+	font-family: $franklin-medium-cd;
+	font-weight: normal;
+}
+h4,
+.h4-title{
+	margin: 0;
+	font-size: 18px;
+	font-family: $franklin-medium-cd;
+	font-weight: normal;
+}
+h5,
+.h5-title{
+	margin: 0;
+	font-size: 16px;
+	font-family: $franklin-medium;
+	font-weight: normal;
+}
+
+/* styles for default content link */
+a{
+	text-decoration: underline;
+	color: $baseLinkColor;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+/* styles for default text */
+p{
+	margin: 0 0 15px;
+}
+
+.emphasis-txt{
+	font-size: 18px;
+}
+.plain-txt{
+	font-size: 16px;
+}
+.small-txt{
+	font-size: 14px;
+}
+
+/* bloquote styles */
+blockquote{
+	margin: 0;
+	padding: 0 0 0 30px;
+	border-left: 3px solid $borderColorSecondary;
+	q{
+		quotes:none;
+		display: block;
+		font-family: $franklin-book-it;
+		font-size: 18px;
+		&:before,
+		&:after{
+			content:'';
+		}
+	}
+	cite{
+		display: block;
+		font-style: normal;
+		font-size: 16px;
+		font-family: $franklin-medium-cd;
+	}
+}

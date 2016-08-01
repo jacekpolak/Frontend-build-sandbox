@@ -4,21 +4,8 @@ body{
 	color: $baseFontColor;
 	position: relative;
 	background: $white;
-	font: 400 18px/1.5 $franklin-book;
+	font: 400 16px/1.44 $franklin-book;
 	min-width: 320px;
-}
-
-a{
-	text-decoration: none;
-	color: $baseLinkColor;
-	&:hover{
-		text-decoration: none;
-		color: $baseLinkColor;
-	}
-	&[href*="tel:"]{
-		cursor: default;
-		color: inherit;
-	}
 }
 
 img{
@@ -26,10 +13,6 @@ img{
 	vertical-align: top;
 	max-width: 100%;
 }
-
-q{quotes:none;}
-q:before{content:'';}
-q:after{content:'';}
 
 *{
 	-webkit-box-sizing: border-box;
