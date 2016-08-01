@@ -3,7 +3,8 @@ export default (() => {
 
     /**
      * Registers Constructor to Factory
-     * @param Component {class}
+     * @param type {String} - Component id
+     * @param Component {class} - constructor
      */
     function registerComponent(type, Component) {
         const proto = Component.prototype;
