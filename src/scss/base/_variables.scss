@@ -35,17 +35,20 @@ $baseFontColor: $scarpaFlow;
 $baseLinkColor: $primary;
 
 /* border variables */
-$borderColorPrimary: $primary;
-$borderColorSecondary: $secondary;
-$borderColorTertiary: $tertiary;
+$borderPrimaryColor: $primary;
+$borderSecondaryColor: $secondary;
+$borderTertiaryColor: $tertiary;
 
-/* font-family */
+
+/* font styles */
 $flood: 'Flood', sans-serif;
 $franklin-book: 'ITCFranklinGothicStd-Book', sans-serif;
 $franklin-book-it: 'ITCFranklinGothicStd-BookIt', sans-serif;
 $franklin-medium: 'ITCFranklinGothicStd-Med', sans-serif;
 $franklin-medium-cd: 'ITCFranklinGothicStd-MdCd', sans-serif;
 $franklin-demi: 'ITCFranklinGothicStd-Demi', sans-serif;
+
+$remValue: 16px;
 
 $mobile           : 767px;
 $tablet           : 991px;

@@ -1,87 +1,148 @@
 /* title styles */
 
 h1,
-.h1-title{
-	margin: 0;
-	font-size: 48px;
-	font-family: $franklin-medium-cd;
-	font-weight: normal;
-	&--flood{
-		font-family: $flood;
-	}
+.h1-title {
+    margin: 0;
+    @include font-size(48px);
+    font-family: $franklin-medium-cd;
+    font-weight: normal;
+
+    &--flood {
+        font-family: $flood;
+    }
 }
+
 h2,
-.h2-title{
-	margin: 0;
-	font-size: 32px;
-	font-family: $franklin-medium-cd;
-	font-weight: normal;
+.h2-title {
+    margin: 0;
+    @include font-size(32px);
+    font-family: $franklin-medium-cd;
+    font-weight: normal;
 }
+
 h3,
-.h3-title{
-	margin: 0;
-	font-size: 28px;
-	font-family: $franklin-medium-cd;
-	font-weight: normal;
+.h3-title {
+    margin: 0;
+    @include font-size(28px);
+    font-family: $franklin-medium-cd;
+    font-weight: normal;
 }
+
 h4,
-.h4-title{
-	margin: 0;
-	font-size: 18px;
-	font-family: $franklin-medium-cd;
-	font-weight: normal;
+.h4-title {
+    margin: 0;
+    @include font-size(18px);
+    font-family: $franklin-medium-cd;
+    font-weight: normal;
 }
+
 h5,
-.h5-title{
-	margin: 0;
-	font-size: 16px;
-	font-family: $franklin-medium;
-	font-weight: normal;
+.h5-title {
+    margin: 0;
+    @include font-size(16px);
+    font-family: $franklin-medium;
+    font-weight: normal;
 }
 
 /* styles for default content link */
-a{
-	text-decoration: underline;
-	color: $baseLinkColor;
-	&:hover{
-		text-decoration: none;
-	}
+a,
+.link {
+    text-decoration: underline;
+    color: $baseLinkColor;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 /* styles for default text */
-p{
-	margin: 0 0 15px;
-}
+p,
+.txt {
+    margin: 0 0 15px;
 
-.emphasis-txt{
-	font-size: 18px;
-}
-.plain-txt{
-	font-size: 16px;
-}
-.small-txt{
-	font-size: 14px;
+    &--emphasis {
+        @include font-size(18px);
+    }
+
+    &--plain {
+        @include font-size(16px);
+    }
+
+    &--small {
+        @include font-size(14px);
+    }
 }
 
 /* bloquote styles */
-blockquote{
-	margin: 0;
-	padding: 0 0 0 30px;
-	border-left: 3px solid $borderColorSecondary;
-	q{
-		quotes:none;
-		display: block;
-		font-family: $franklin-book-it;
-		font-size: 18px;
-		&:before,
-		&:after{
-			content:'';
-		}
-	}
-	cite{
-		display: block;
-		font-style: normal;
-		font-size: 16px;
-		font-family: $franklin-medium-cd;
-	}
+blockquote {
+    margin: 0;
+    padding: 0 0 0 30px;
+    border-left: 3px solid $borderSecondaryColor;
+
+    q {
+        quotes:none;
+        display: block;
+        font-family: $franklin-book-it;
+        @include font-size(18px);
+
+        &:before,
+        &:after {
+            content:'';
+        }
+    }
+
+    cite {
+        display: block;
+        font-style: normal;
+        @include font-size(16px);
+        font-family: $franklin-medium-cd;
+    }
+}
+
+/* list styles */
+
+/* bullet list */
+ul,
+.bullet-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+
+        &:before {
+            content: '-';
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 4px 0 0;
+        }
+    }
+
+    &--nested {
+        padding: 0 0 0 10px;
+    }
+}
+
+/* numbered list */
+ol,
+.num-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: list;
+
+    &__item {
+
+        &:before {
+            counter-increment: list;
+            content: counters(list,".") ".";
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 4px 0 0;
+        }
+    }
+
+    &--nested {
+        padding: 0 0 0 10px;
+    }
 }
