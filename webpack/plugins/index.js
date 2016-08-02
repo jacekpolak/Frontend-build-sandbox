@@ -7,7 +7,8 @@ module.exports = [
     require('./define'),
     require('./extract-text'),
     require('./provide'),
-    require('./svg')
+    require('./svg'),
+    require('./sass-lint')
 ];
 
 if (NODE_ENV === 'production') {
