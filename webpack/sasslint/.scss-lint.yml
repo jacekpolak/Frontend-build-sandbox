@@ -19,7 +19,7 @@ linters:
     enabled: false
 
   NameFormat:
-    enabled: false
+    enabled: true
 
   PrivateNamingConvention:
     enabled: true
@@ -45,5 +45,5 @@ linters:
     enabled: true
     style: double_quotes
 
-  Indentation:
-    enabled: false
+  FinalNewline:
+    present: true
