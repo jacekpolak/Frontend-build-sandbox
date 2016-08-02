@@ -1,10 +1,65 @@
 // forms main styles
 
 .form {
-    &__input-holder {
-        position: relative;
-    }
-    &__input {
+  &__input-holder {
+    position: relative;
 
+    &--disabled {
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+      }
     }
+  }
+  &__input {
+    width: 100%;
+    display: block;
+    font-size: 1rem;
+    line-height: 2rem;
+    border: 1px solid $basicInputColor;
+    border-radius: 3px;
+    padding: 7px 10px;
+    color: $textInputColor;
+
+    //placeholder color styles
+    &::-webkit-input-placeholder {
+      color: $placeholderInputColor;
+    }
+    &::-moz-placeholder {
+      color: $placeholderInputColor;
+    }
+    &:-ms-input-placeholder {
+      color: $placeholderInputColor;
+    }
+
+    //states styles
+    &:focus{
+      outline: none;
+      border-color: $focusInputColor;
+      box-shadow: 0 0 4px rgba($focusInputColor, 0.25);
+    }
+
+    &--error{
+      border-color: $errorInputColor;
+    }
+
+    &--success{
+      border-color: $successInputColor;
+    }
+
+    &--disabled{
+      color: rgba($placeholderInputColor, 0.45);
+      background: $disabledInputColor;
+    }
+
+    //search icon delete for input[type*='search']
+    &::-webkit-search-cancel-button{
+      -webkit-appearance: none;
+    }
+  }
 }

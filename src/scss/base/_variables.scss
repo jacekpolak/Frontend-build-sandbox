@@ -40,7 +40,7 @@ $borderSecondaryColor: $secondary;
 $borderTertiaryColor: $tertiary;
 $borderFouthColor: $scarpaFlow;
 
-// button variables
+// button styles
 $btnPrimaryBgColor: $primary;
 $btnSecondaryBgColor: $tertiary;
 $btnTertiaryBgColor: $alto;
@@ -49,6 +49,14 @@ $btnTxtColor: $white;
 $btnTertiaryTxtColor: $scarpaFlow;
 $btnOnDarkTxtColor: $primary;
 
+// forms styles
+$basicInputColor: $alto;
+$focusInputColor: $tertiary;
+$successInputColor: $seaGreen;
+$errorInputColor: $secondary;
+$disabledInputColor: $alabaster;
+$placeholderInputColor: $gray;
+$textInputColor: $scarpaFlow;
 
 // font styles
 $flood: 'Flood', sans-serif;

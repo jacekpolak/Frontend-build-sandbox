@@ -1,19 +1,19 @@
 /* px to rem convert */
 @function calculateRem($size) {
-    $remSize: $size / $remValue;
-    @return #{$remSize}rem;
+  $remSize: $size / $remValue;
+  @return #{$remSize}rem;
 }
 @mixin font-size($size) {
-    font-size: calculateRem($size);
+  font-size: calculateRem($size);
 }
 
 @mixin setBgColorAndHover($baseColor) {
-    background-color: $baseColor;
+  background-color: $baseColor;
 
-    /* we use :not(.btn--disabled) to prevent hover and active states for disabled btn */
-    &:not(.btn--disabled):active,
-    &:not(.btn--disabled):hover{
-        background-color: darken($baseColor, 10%);
-    }
+  /* we use :not(.btn--disabled) to prevent hover and active states for disabled btn */
+  &:not(.btn--disabled):active,
+  &:not(.btn--disabled):hover{
+    background-color: darken($baseColor, 10%);
+  }
 }
 
