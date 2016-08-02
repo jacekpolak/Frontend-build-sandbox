@@ -1,11 +1,11 @@
-/* title styles */
+// title styles
 
 h1,
 .h1-title {
-    margin: 0;
     @include font-size(48px);
     font-family: $franklin-medium-cd;
     font-weight: normal;
+    margin: 0;
 
     &--flood {
         font-family: $flood;
@@ -44,7 +44,7 @@ h5,
     font-weight: normal;
 }
 
-/* styles for default content link */
+// styles for default content link
 a,
 .link {
     text-decoration: underline;
@@ -55,7 +55,7 @@ a,
     }
 }
 
-/* styles for default text */
+// styles for default text
 p,
 .txt {
     margin: 0 0 15px;
@@ -73,7 +73,7 @@ p,
     }
 }
 
-/* bloquote styles */
+// bloquote styles
 blockquote {
     margin: 0;
     padding: 0 0 0 30px;
@@ -99,9 +99,9 @@ blockquote {
     }
 }
 
-/* list styles */
+// list styles
 
-/* bullet list */
+// bullet list
 ul,
 .bullet-list {
     margin: 0;
@@ -131,7 +131,7 @@ ul,
     }
 }
 
-/* numbered list */
+// numbered list
 ol,
 .num-list {
     margin: 0;

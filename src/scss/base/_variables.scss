@@ -1,11 +1,11 @@
-/* colors named via Named via http://chir.ag/projects/name-that-color */
+// colors named via Named via http://chir.ag/projects/name-that-color
 
-/* base colors */
+// base colors
 $primary: #034580;
 $secondary: #eb174b;
 $tertiary: #008fc5;
 
-/* accent colours (highlights and backgrounds) */
+// accent colours (highlights and backgrounds)
 $seaGreen: #2d9c49;
 $disco: #731472;
 $divie: #e99619;
@@ -13,7 +13,7 @@ $gold: #fad000;
 $buddhaGold: #b9b309;
 $paleOyster: #9a8c7e;
 
-/* typography and backgrounds */
+// typography and backgrounds
 $scarpaFlow: #56565a;
 $gray: #818181;
 $alto: #dadada;
@@ -21,7 +21,7 @@ $gallery: #ededed;
 $alabaster: #f7f7f7;
 $white: #fff;
 
-/* brand product colors */
+// brand product colors
 $artistry: #a29061;
 $bodykey: #006325;
 $espring: #adc5e6;
@@ -30,17 +30,17 @@ $nutrilite: #0b6527;
 $satinique: #919295;
 $truvivity: #87c3c4;
 
-/* common variables */
+// common variables
 $baseFontColor: $scarpaFlow;
 $baseLinkColor: $primary;
 
-/* border variables */
+// border variables
 $borderPrimaryColor: $primary;
 $borderSecondaryColor: $secondary;
 $borderTertiaryColor: $tertiary;
 $borderFouthColor: $scarpaFlow;
 
-/* button variables */
+// button variables
 $btnPrimaryBgColor: $primary;
 $btnSecondaryBgColor: $tertiary;
 $btnTertiaryBgColor: $alto;
@@ -50,7 +50,7 @@ $btnTertiaryTxtColor: $scarpaFlow;
 $btnOnDarkTxtColor: $primary;
 
 
-/* font styles */
+// font styles
 $flood: 'Flood', sans-serif;
 $franklin-book: 'ITCFranklinGothicStd-Book', sans-serif;
 $franklin-book-it: 'ITCFranklinGothicStd-BookIt', sans-serif;
