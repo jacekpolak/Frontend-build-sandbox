@@ -89,17 +89,47 @@
 
     <form class="form" action="#">
       <div class="form__row">
-        <div class="form__input-holder">
-          <input class="form__input" type="text" placeholder="Default">
+        <div class="text-input">
+          <input class="text-input__focus" type="text" placeholder="Default">
         </div>
-        <div class="form__input-holder">
-          <input class="form__input" type="search">
+        <div class="text-input">
+          <input class="text-input__focus" type="search">
         </div>
-        <div class="form__input-holder form__input-holder--disabled">
-          <input placeholder="Disabled" class="form__input form__input--disabled" type="search">
+        <div class="text-input text-input--disabled">
+          <input placeholder="Disabled" class="text-input__focus text-input__focus--disabled" type="search">
         </div>
-        <div class="form__input-holder" data-components="Component1">
-          <input class="js-datepicker form__input">
+        <div class="text-input" data-components="Component1">
+          <input class="js-datepicker text-input__focus">
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="form__radio">
+          <div class="form__radio-holder">
+            <label class="radio-input">
+              <input class="radio-input__focus"  type="radio" name="radio01" checked="checked">
+              <span class="radio-input__label">Radio</span>
+            </label>
+          </div>
+          <div class="form__radio-holder">
+            <label class="radio-input">
+              <input class="radio-input__focus"  type="radio" name="radio01" checked="checked">
+              <span class="radio-input__label">Radio</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="form__check-holder">
+          <label class="check-input">
+            <input class="check-input__focus"  type="checkbox" checked="checked">
+            <span class="check-input__label">Radio</span>
+          </label>
+        </div>
+        <div class="form__check-holder">
+          <label class="check-input">
+            <input class="check-input__focus"  type="checkbox">
+            <span class="check-input__label">Radio</span>
+          </label>
         </div>
       </div>
     </form>

@@ -23,7 +23,7 @@
     @include setBgColorAndHover($btnTertiaryBgColor);
   }
 
-  &--on-dark{
+  &--on-dark {
     color: $btnOnDarkTxtColor;
     @include setBgColorAndHover($btnOnDarkBgColor);
   }
@@ -33,14 +33,14 @@
     cursor: not-allowed;
   }
 
-  &--lg{
+  &--lg {
     border-radius: 27px;
     padding: 11px 25px;
     min-width: 200px;
     @include font-size(18px);
   }
 
-  &--sm{
+  &--sm {
     border-radius: 19px;
     padding: 3px 18px;
     min-width: 142px;
