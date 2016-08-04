@@ -1,0 +1,65 @@
+.footer--rights {
+  background-color: $footerDarkGrey;
+  p {
+    text-align: center;
+    margin: 0px;
+    padding: 15px 10px;
+  };
+};
+
+.footer--body {
+  background-color: $footerGray;
+  ul {
+    li {
+      padding: 20px 23px;
+      font-weight: bold;
+      line-height: 30px;
+      border-bottom: 1px solid $footerDarkGrey;
+    };
+    li:before {
+      content: initial;
+    }
+    li:after{
+      content: "+";
+      color: $footerCrossColor;
+      float: right;
+      font-size: 30px;
+      vertical-align: middle;
+    }
+  };
+  .footer--contact {
+    display: flex;
+    padding: 15px 10px;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    .footer--controll {
+      color: white;
+      padding: 15px 15px 15px 0px;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    .footer--controll:before {
+      content: "\2022";
+      font-size: 50px;
+      vertical-align: middle;
+      line-height: 20px;
+    }
+
+    button {
+      background: $footerChatButtonBackground;
+      border: 1px solid $footerDarkGrey;
+      border-radius: 0px 5px 5px 0px;
+      color: $footerChatButton;
+      flex-grow: 1;
+      font-size: 1.2em;
+      padding: 15px 10px;
+    }
+    .footer--online {
+      background-color: $chatOnline;
+    }
+    .footer--offline {
+      background-color: $chatOffline;
+    }
+  }
+};
+
