@@ -2,6 +2,7 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <link rel="stylesheet" href="build/app.css">
 </head>
@@ -145,21 +146,51 @@
   </div>
 </div>
 
-<footer data-components="Footer">
-
+<footer data-components="Footer" class="footer">
     <div class="footer__top">
-        <div class="footer__newsletter">SIGN UP FOR NEWS AND OFFERS</div>
-        <div class="footer__socialmedia">CONNECT WITH US ON
-            <svg class="svg-icon">
-                <use xlink:href="#icon-amway-icons-facebook"></use>
-            </svg>
-            </a>
+        <div class="container">
+            <div class="row">
+
+                <div class="footer__newsletter col-sm-12 col-md-6 col-lg-6">
+                    <div class="footer__title">SIGN UP FOR NEWS AND OFFERS</div>
+                    <div class="text-input">
+                        <input class="text-input__focus" type="text" placeholder="Your email address">
+                    </div>
+                </div>
+
+                <div class="footer__socialmedia col-sm-12 col-md-6 col-lg-6">
+                  <div class="footer__title">CONNECT WITH US ON</div>
+                  <div class="footer__icons">
+                      <a href="" class="footer__link">
+                        <svg class="svg-icon">
+                            <use class="footer__icon" xlink:href="#icon-amway-icons-facebook" ></use>
+                        </svg>
+                      </a>
+                      <a href="" class="footer__link">
+                        <svg class="svg-icon">
+                          <use class="footer__icon" xlink:href="#icon-amway-icons-twitter" ></use>
+                        </svg>
+                      </a>
+                      <a href="" class="footer__link">
+                        <svg class="svg-icon">
+                          <use class="footer__icon" xlink:href="#icon-amway-icons-youtube" ></use>
+                        </svg>
+                      </a>
+                      <a href="" class="footer__link">
+                        <svg class="svg-icon">
+                          <use class="footer__icon" xlink:href="#icon-amway-icons-instagram" ></use>
+                        </svg>
+                      </a>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="footer__body"></div>
     <div class="footer__copyrights">
         <p>&copy; 2011-2016 Amway Europe. All rights reserved.</p>
     </div>
+
 </footer>
 
 
