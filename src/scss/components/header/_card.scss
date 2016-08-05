@@ -1,18 +1,33 @@
 
 .header__cart {
   float: right;
-  font-family: $franklin-medium-cd;
 
   .cart-info, &-btn, .shopping-cart {
     display: none;
   }
 
   &-icon {
+    display: inline-block;
+    height: 30px;
+    position: relative;
+
     svg {
-      fill: $primary;
+      fill: $gray;
       height: 30px;
       width: 30px;
       vertical-align: middle;
+    }
+
+    .cart-products-number {
+      color: $tertiary;
+      font-family: $franklin-medium-cd;
+      font-size: 12px;
+      left: 9px;
+      line-height: 1;
+      position: absolute;
+      text-align: center;
+      top: 5px;
+      width: 14px;
     }
   }
 }
@@ -26,7 +41,7 @@
       align-items: center;
       background: $white;
       border: 1px $gallery solid;
-      border-radius: 6px;
+      border-radius: $globalBorderRadius;
       display: flex;
       flex-direction: row;
       padding: 9px;
@@ -37,7 +52,8 @@
     &:hover, &:focus {
       #{$root}-wrapper {
         border-bottom-width: 0;
-        border-radius: 6px 6px 0 0;
+        border-radius: $globalBorderRadius $globalBorderRadius 0 0;
+        border-color: $tertiary;
       }
 
       .shopping-cart {
@@ -52,8 +68,8 @@
 
     .shopping-cart {
       background: $white;
-      border-radius: 6px 0 6px 6px;
-      border: 1px $gallery solid;
+      border-radius: $globalBorderRadius 0 $globalBorderRadius $globalBorderRadius;
+      border: 1px $tertiary solid;
       position: absolute;
       right: 0;
       top: 48px;
@@ -61,7 +77,7 @@
       z-index: 9;
 
       &__inner {
-        padding: 15px;
+        padding: 9px 15px;
       }
 
       &__item {
@@ -87,6 +103,7 @@
 
       &__img {
         margin: 0 7px 0 0;
+        width: 55px;
         img {
           border: 1px $alto solid;
         }
@@ -94,6 +111,7 @@
 
       &__title-header, &__p-ammount {
         color: $primary;
+        font-family: $franklin-medium-cd;
         text-transform: uppercase;
         @include font-size(14px);
       }
@@ -124,9 +142,13 @@
         @include font-size(12px);
       }
 
+      &__p-total {
+        font-weight: 700;
+      }
+
       &__remove {
         position: absolute;
-        top: 20px;
+        top: 18px;
         right: -5px;
         svg {
           fill: $secondary;
@@ -138,6 +160,7 @@
       &__total {
         background: #f0f0f0;
         padding: 15px;
+        border-radius: 0 0 6px 6px;
       }
 
       &__subtotal {
@@ -154,6 +177,10 @@
 
     &-icon {
       padding-right: 8px;
+
+      svg {
+        fill: $primary;
+      }
     }
 
     .cart-info {
