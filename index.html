@@ -14,7 +14,113 @@
 
 <div data-components="Component" data-options='{"Component": {"option": "value"}}'>
   <div class="container">
-    <h3>My Awesome Component</h3>
+
+  <div class="header__cart" tabindex="0" aria-haspopup="true">
+    <div class="header__cart-wrapper">
+      <a href="#" class="header__cart-icon">
+        <svg class="svg-icon">
+          <use xlink:href="#icon-amway-icons-cart-empty"></use>
+        </svg>
+      </a>
+
+      <div class="cart-info">
+        <div class="cart-info__pv">PV: 46</div>
+        <div class="cart-info__price">
+          <span class="price">£ 49.60</span>
+        </div>
+      </div>
+
+      <a href="#" class="header__cart-btn btn btn--secondary">
+        <span>Checkout</span>
+      </a>
+    </div>
+
+    <div class="shopping-cart">
+      <div class="shopping-cart__inner">
+        <div class="shopping-cart__title">
+          <h3 class="shopping-cart__title-header">Recently added items</h3>
+          <div class="shopping-cart__p-ammount">1 ITEM</div>
+        </div>
+
+        <ul class="shopping-cart__basket">
+          <li class="shopping-cart__item">
+            <div class="shopping-cart__item-content">
+              <figure class="shopping-cart__img">
+                <img src="build/media/product-1.jpg">
+              </figure>
+              <a href="/products/productId" class="shopping-cart__product">
+                <div class="shopping-cart__p-title">Vitamin C Plus Extended Release Family Size</div>
+                <div class="shopping-cart__p-qant">
+                  <div>
+                    <strong>Qty:</strong>
+                    <span class="shopping-cart__p-quant">1</span> x <span class="shopping-cart__p-price">£49.60</span>
+                  </div>
+                  <div class="shopping-cart__p-total">
+                    £<span>49.60</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <a href="#" class="shopping-cart__remove" title="Remove product">
+              <svg class="svg-icon">
+                <use xlink:href="#icon-amway-icons-cancel"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="shopping-cart__item">
+            <div class="shopping-cart__item-content">
+              <figure class="shopping-cart__img">
+                <img src="build/media/product-1.jpg">
+              </figure>
+              <a href="/products/productId" class="shopping-cart__product">
+                <div class="shopping-cart__p-title">Vitamin C Plus Extended Release Family Size</div>
+                <div class="shopping-cart__p-desc">
+                  <strong>Color:</strong> Spice Bronze
+                </div>
+                <div class="shopping-cart__p-qant">
+                  <div>
+                    <strong>Qty:</strong>
+                    <span class="shopping-cart__p-quant">1</span> x <span class="shopping-cart__p-price">£49.60</span>
+                  </div>
+                  <div class="shopping-cart__p-total">
+                    £<span>49.60</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <a href="#" class="shopping-cart__remove" title="Remove product">
+              <svg class="svg-icon">
+                <use xlink:href="#icon-amway-icons-cancel"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="shopping-cart__total">
+        <div class="shopping-cart__subtotal">
+          <div>Cart subtotal:</div>
+          <div>
+            <span>£</span>
+            <span class="shopping-cart__subtotal-item">49.60</span>
+          </div>
+        </div>
+
+        <div class="shopping-cart__btn">
+          <a href="#" class="header__cart-btn btn btn--secondary">
+            <span>Checkout</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- / .header__cart -->
+
+
+
+    <!-- <h3>My Awesome Component</h3>
     <div class="js-child">Destroy Component</div>
     <div class="js-show-list">Render list</div>
     <ul class="js-list-portal"></ul>
@@ -140,7 +246,7 @@
 
     <svg class="svg-icon">
       <use xlink:href="#icon-amway-icons-cart-empty"></use>
-    </svg>
+    </svg> -->
 
   </div>
 </div>
