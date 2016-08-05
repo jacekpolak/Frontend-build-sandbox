@@ -1,65 +1,192 @@
-.footer--rights {
-  background-color: $footerDarkGrey;
-  p {
-    text-align: center;
-    margin: 0px;
-    padding: 15px 10px;
-  };
-};
+.footer_rights {
+   background-color: $footerDarkGrey;
 
-.footer--body {
+   p {
+     text-align: center;
+     margin: 0px;
+     padding: 15px 10px;
+   };
+ };
+
+.footer-is-hiden {
+  display: none;
+}
+
+.footer_contact_icon {
+  fill: $footerChatButton;
+  height: 20px;
+  vertical-align: middle;
+  width: 24px;
+}
+
+.footer-toggle-list {
+  border-bottom: 1px solid $footerDarkGrey;
+  font-weight: bold;
+  line-height: 30px;
+  padding: 20px 23px;
+  p:after {
+    content: "+";
+    color: $footerCrossColor;
+    float: right;
+    font-size: 30px;
+    vertical-align: middle;
+  }
+}
+
+.footer_body {
   background-color: $footerGray;
+  font-size: 14px;
+
+  p {
+    margin: 0px;
+    font-size: 16px;
+  }
+
   ul {
     li {
-      padding: 20px 23px;
-      font-weight: bold;
-      line-height: 30px;
       border-bottom: 1px solid $footerDarkGrey;
-    };
-    li:before {
-      content: initial;
+      line-height: 30px;
+      padding: 20px 23px 20px 0px;
+      font-weight: 300;
+      &:last-child {
+        border-bottom: 0px;
+        padding-bottom: 0px;
+      }
+      &:before {
+        content: initial;
+      }
+      ul {
+        display: none;
+      }
     }
-    li:after{
-      content: "+";
-      color: $footerCrossColor;
-      float: right;
-      font-size: 30px;
-      vertical-align: middle;
-    }
-  };
-  .footer--contact {
-    display: flex;
-    padding: 15px 10px;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    .footer--controll {
-      color: white;
-      padding: 15px 15px 15px 0px;
-      border-radius: 5px 0px 0px 5px;
-    }
+  }
 
-    .footer--controll:before {
+  .footer_controll {
+    color: white;
+    padding: 15px 15px 15px 0px;
+    border-radius: 5px 0px 0px 5px;
+    &:before {
       content: "\2022";
       font-size: 50px;
       vertical-align: middle;
       line-height: 20px;
     }
+  }
 
-    button {
+  .footer_offline {
+    background-color: $chatOffline;
+  }
+
+  .footer_online {
+    background-color: $chatOnline;
+  }
+
+  .footer-btn-chat {
+    background: $footerChatButtonBackground;
+    border: 1px solid $footerDarkGrey;
+    border-radius: 0px 5px 5px 0px;
+    color: $footerChatButton;
+    flex-grow: 1;
+    font-size: 1.2em;
+    padding: 15px 10px;
+  }
+
+  .footer_link {
+    color: $baseFontColor;
+    &:link {
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:active {
+      text-decoration: none;
+    }
+
+  }
+
+  .footer_connection {
+    padding: 20px 10px;
+    .footer_contact_icon {
+      fill: $footerChatButton;
+      height: 20px;
+      width: 20px;
+    }
+    p {
+      display: none;
+    }
+  }
+
+  .footer_contact {
+    padding: 15px 10px;
+    justify-content: space-around;
+
+    .footer-btn-chat {
       background: $footerChatButtonBackground;
       border: 1px solid $footerDarkGrey;
       border-radius: 0px 5px 5px 0px;
       color: $footerChatButton;
       flex-grow: 1;
       font-size: 1.2em;
-      padding: 15px 10px;
+      padding: 14px 10px;
     }
-    .footer--online {
+
+    .footer__online {
       background-color: $chatOnline;
     }
-    .footer--offline {
+
+    .footer__offline {
       background-color: $chatOffline;
     }
   }
 };
 
+.footer-is-show {
+  p:after {
+    content: "-";
+    color: $footerCrossColor;
+    float: right;
+    font-size: 50px;
+    vertical-align: middle;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: $large-desktop) {
+  .footer-toggle-list {
+    border-bottom: 0px;
+    border-right: 1px solid $footerDarkGrey;
+    ul {
+      li {
+        border-bottom: 0px;
+      }
+    }
+    p:after {
+      display:none;
+    }
+  }
+  .footer-is-hiden {
+    display: block;
+  }
+  .footer_body {
+    ul {
+      li {
+        padding: inherit;
+      }
+    }
+    p {
+      padding-bottom: 20px;
+    }
+    .footer_connection {
+      p {
+        font-weight: bold;
+        line-height: 30px;
+        display: block;
+      }
+    }
+    .footer_controll {
+      color: white;
+      padding: 4px 15px 3px 0px;
+      border-radius: 5px 5px 0px 0px;
+    }
+  }
+}
