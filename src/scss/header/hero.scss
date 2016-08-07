@@ -1,0 +1,31 @@
+@import "../base/_variables";
+
+.container-hero {
+  width: 320px;
+  height: 320px;
+}
+
+.hero-image {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: $mobile) { /* Specific to this particular image */
+  .hero-image {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
+.hero-content {
+  position: absolute;
+  margin: 120px 40px;
+  max-width: 300px;
+  color: $alabaster;
+}
+
