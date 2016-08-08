@@ -19,19 +19,19 @@
 
 //media query mixin
 @mixin tablet {
-  @media (min-width: #{$tablet}) {
+  @media (min-width: #{$mobile}) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (min-width: #{$desktop}) {
+  @media (min-width: #{$tablet}) {
     @content;
   }
 }
 
 @mixin large-desktop {
-  @media (min-width: #{large-desktop}) {
+  @media (min-width: #{desktop}) {
     @content;
   }
 }
