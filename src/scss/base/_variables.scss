@@ -12,6 +12,10 @@ $divie: #e99619;
 $gold: #fad000;
 $buddhaGold: #b9b309;
 $paleOyster: #9a8c7e;
+$regalBlue: #033e73;
+$amaranth: #ed2b55;
+$biscay: #18375e;
+$chathamsBlue: #194e7e;
 
 // typography and backgrounds
 $scarpaFlow: #56565a;
@@ -29,6 +33,7 @@ $home: #4e8e2c;
 $nutrilite: #0b6527;
 $satinique: #919295;
 $truvivity: #87c3c4;
+$sanMarino: #3e709c;
 
 // common variables
 $baseFontColor: $scarpaFlow;
@@ -39,6 +44,9 @@ $borderPrimaryColor: $primary;
 $borderSecondaryColor: $secondary;
 $borderTertiaryColor: $tertiary;
 $borderFouthColor: $scarpaFlow;
+$borderFifthColor: $sanMarino;
+$borderSixColor: $biscay;
+$borderSeventhColor: $chathamsBlue;
 
 // button styles
 $btnPrimaryBgColor: $primary;
@@ -48,6 +56,10 @@ $btnOnDarkBgColor: $white;
 $btnTxtColor: $white;
 $btnTertiaryTxtColor: $scarpaFlow;
 $btnOnDarkTxtColor: $primary;
+
+// bg styles
+$bgPrimaryColor: $primary;
+$bgPrimaryDarkColor: darken($primary, 1%);
 
 // forms styles
 $basicInputColor: $alto;
@@ -69,7 +81,7 @@ $franklin-demi: "ITCFranklinGothicStd-Demi", sans-serif;
 $remValue: 16px;
 $globalVerticalMargin: 20px;
 
-$mobile           : 767px;
-$tablet           : 991px;
-$desktop          : 1200px;
-$large-desktop    : 1900px;
+$mobile           : 48em; //768px
+$tablet           : 62em; //992px
+$desktop          : 75em; //1200px
+$large-desktop    : 118.75em; //1900px

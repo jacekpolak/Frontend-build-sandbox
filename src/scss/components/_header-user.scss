@@ -1,0 +1,275 @@
+//local variables
+$notificationColor: $amaranth;
+$dropBorderColor: $alto;
+
+.user-header {
+  background-color: $bgPrimaryColor;
+
+  & ~&{
+    margin: 50px 0 0;
+  }
+
+  &__wrapper {
+    margin: 0 -15px;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.lang-select {
+  padding: 17px 15px;
+  font-family: $franklin-medium-cd;
+  border-bottom: 1px solid $borderFifthColor;
+
+  @include tablet {
+    background-color: $bgPrimaryDarkColor;
+    padding: 0;
+    @include user-header-border;
+  }
+  
+  &__link {
+    text-decoration: none;
+    display: block;
+    color: $white;
+
+    @include tablet {
+      padding: 10px 8px 10px 12px;
+    }
+  }
+
+  &__icon {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+      vertical-align: middle;
+      fill: $white;
+      width: 26px;
+      height: 14px;
+    }
+  }
+
+  &__desc {
+    display: inline-block;
+    vertical-align: middle;
+
+    @include tablet {
+      @include font-size(13px);
+      font-family: $franklin-medium;
+      margin: 0 10px 0 0;
+      
+      &--drop {
+        color: $bgPrimaryDarkColor;
+        margin: 0;
+      }
+    }
+  }
+
+  &__flag {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -1px 8px 0 0;
+  }
+
+  &__drop {
+    @include tablet {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $white;
+      box-shadow: 1px 1px 9px rgba($dropBorderColor, .2);
+      border-color: transparent $dropBorderColor $dropBorderColor;
+      border-radius: 2px;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__list {
+    padding: 10px 0 0;
+    @include tablet {
+      padding: 0;
+    }
+
+    &-item {
+      @extend %custom-list-item;
+      padding: 10px 0;
+      &:last-child {
+        padding-bottom: 0;
+      }
+      @include tablet {
+        padding: 0;
+        border-bottom: 1px solid $dropBorderColor;
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+
+
+  }
+}
+
+.account-area {
+  background-color: $bgPrimaryDarkColor;
+  border-bottom: 1px solid $borderFifthColor;
+  padding: 15px 15px;
+  @include tablet {
+    border: 0;
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    fill: $white;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 8px 0 0;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    text-transform: uppercase;
+
+    &-item {
+      @extend %custom-list-item;
+      float: left;
+      margin: 0 14px 0 0;
+      &:after {
+        content: "/";
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        color: $white;
+        transform: translateY(-50%);
+      }
+      @include tablet {
+        margin: 0;
+        @include user-header-border;
+      }
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  &__notification {
+    margin: -15px -15px 0;
+    padding: 15px;
+    background-color: $bgPrimaryColor;
+
+    &-link {
+      display: block;
+      text-decoration: none;
+      color: $white;
+    }
+    
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      margin: 0 8px 0 0;
+
+      svg {
+        fill: $white;
+        width: 21px;
+        height: 21px;
+        vertical-align: top;
+      }
+
+      &--has-notification {
+        &:before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 1px;
+          height: 7px;
+          width: 7px;
+          border-radius: 50%;
+          background: $notificationColor;
+          border: 1px solid $borderPrimaryColor;
+        }
+      }
+    }
+
+    &-pv {
+      display: none;
+    }
+    
+    &-num {
+      color: $white;
+      text-transform: uppercase;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+.user-area {
+  position: relative;
+  margin: 0 -15px -15px;
+  padding: 15px;
+  background-color: $bgPrimaryDarkColor;
+  border: 1px solid $borderFifthColor;
+  border-width: 1px 0;
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: top;
+    fill: $white;
+    margin: 0 8px 0 0;
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__name {
+    text-transform: uppercase;
+    color: $white;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__pv {
+    display: block;
+    @include font-size(14px);
+  }
+
+  &__drop {
+    padding: 30px 0 0 30px;
+  }
+
+  &__list {
+    text-transform: uppercase;
+
+    &-item {
+      @extend %custom-list-item;
+      margin: 0 0 30px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+    
+    a {
+      color: $white;
+      text-decoration: none;
+      display: block;
+    }
+  }
+}

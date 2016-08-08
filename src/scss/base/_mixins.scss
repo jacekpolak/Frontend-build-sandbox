@@ -1,4 +1,4 @@
-/* px to rem convert */
+// px to rem convert
 @function calculateRem($size) {
   $remSize: $size / $remValue;
   @return #{$remSize}rem;
@@ -10,10 +10,49 @@
 @mixin setBgColorAndHover($baseColor) {
   background-color: $baseColor;
 
-  /* we use :not(.btn--disabled) to prevent hover and active states for disabled btn */
+  // we use :not(.btn--disabled) to prevent hover and active states for disabled btn
   &:not(.btn--disabled):active,
   &:not(.btn--disabled):hover {
     background-color: darken($baseColor, 10%);
+  }
+}
+
+//media query mixin
+@mixin tablet {
+  @media (min-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{tablet}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: #{desktop}) {
+    @content;
+  }
+}
+
+@mixin user-header-border {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: $borderSixColor;
+    border-left: 1px solid $borderSeventhColor;
+  }
+  &:after {
+    left: auto;
+    right: 0;
   }
 }
 
