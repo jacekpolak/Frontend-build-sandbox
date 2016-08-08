@@ -20,6 +20,7 @@ $alto: #dadada;
 $gallery: #ededed;
 $alabaster: #f7f7f7;
 $white: #fff;
+$lightGray: #f0f0f0;
 
 // brand product colors
 $artistry: #a29061;
@@ -70,7 +71,7 @@ $remValue: 16px;
 $globalVerticalMargin: 20px;
 $globalBorderRadius: 3px;
 
-$mobile           : 767px;
-$tablet           : 991px;
-$desktop          : 1200px;
-$large-desktop    : 1900px;
+$mobile           : 48em;       // 768px
+$tablet           : 62em;       // 991px
+$desktop          : 75em;       // 1200px
+$large-desktop    : 118.75em;   // 1900 px
