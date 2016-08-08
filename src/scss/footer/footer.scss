@@ -1,3 +1,9 @@
+$topFooterBgColor: $tertiary;
+$topFooterTextColor: $white;
+$topFooterIconsBgColor: $white;
+$topFooterIconsTextColor: $primary;
+$topFooterFont: $franklin-medium-cd;
+
 .footer {
 
   &__top {
@@ -10,6 +16,7 @@
   &__title {
     color: $topFooterTextColor;
     font-family: $topFooterFont;
+
     @include font-size(16px);
 
     @include desktop {
@@ -19,25 +26,41 @@
 
   &__newsletter {
     margin-bottom: 0;
+
     @include desktop {
       display: flex;
       padding-right: 0;
     }
 
     .text-input {
+      background: $white;
+      border: 1px solid $basicInputColor;
+      border-radius: 3px;
+      display: flex;
+      font-size: 1rem;
+      line-height: 2rem;
       margin-bottom: 0;
+      padding: 7px 10px;
+
+      &__focus {
+        border-width: 0;
+        padding: 0 7px;
+      }
+
       @include tablet {
         width: 350px;
       }
+
       @include desktop {
-        //width: 100%;
-        //min-width: 250px;
-        //max-width: 350px;
         width: calc( 100% - 210px);
       }
     }
+  }
 
-
+  &__btn-submit {
+    background-color: transparent;
+    border-width: 0;
+    cursor: pointer;
   }
 
   &__socialmedia {
@@ -51,17 +74,42 @@
     display: inline-block;
     margin-right: 10px;
     text-decoration: none;
+
     @include desktop {
       vertical-align: middle;
     }
 
     .svg-icon {
       background: $white;
-      border-radius: 4px;
+      border-radius: 3px;
       display: block;
-      fill: $topFooterIconsBgColor;
       height: 35px;
       width: 35px;
+    }
+  }
+
+  &__icon {
+    &--email {
+      fill: $alto;
+      height: 32px;
+      width: 32px;
+    }
+
+    &--right-arrow {
+      display: block;
+      fill: $topFooterIconsTextColor;
+      height: 32px;
+      width: 19px;
+    }
+
+    &--youtube,
+    &--twitter,
+    &--instagram {
+      fill: $topFooterIconsTextColor;
+    }
+
+    &--facebook {
+      fill: $topFooterIconsBgColor;
     }
   }
 }
