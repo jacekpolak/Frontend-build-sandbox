@@ -1,12 +1,6 @@
 @import "./../../base/variables";
 @import "./../../base/mixins";
 
-@mixin tablet {
-  @media (min-width: #{$tablet}) {
-    @content;
-  }
-}
-
 .my-lists {
   $root: &;
   $listWidth: 250px;
