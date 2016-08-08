@@ -14,7 +14,7 @@
   font-weight: bold;
   line-height: 30px;
   margin: 0px;
-  padding: 20px 23px;
+  padding: 20px 0px 23px 0px;
   &:last-child {
     border-bottom: 0px;
   }
@@ -24,7 +24,7 @@
   &__open {
     fill: $footerCrossColor;
     float: right;
-    font-size: 30px;
+    @include font-size(30px);
     height: 36px;
     vertical-align: middle;
     width: 36px;
@@ -34,10 +34,11 @@
   }
 }
 
-.js-footer-list {
-  &-is-hiden {
+.navigation-list {
+  &--is-hiden {
     display: none;
   }
+
 }
 
 .footer-list {
@@ -57,7 +58,6 @@
     }
   }
 }
-
 .footer-communication {
   border-top: 1px solid $footerDarkGrey;
   padding: 15px 20px 20px 15px;
@@ -76,7 +76,8 @@
   }
   &__info:before {
     content: "\2022";
-    font-size: 50px;
+
+    @include font-size(50px);
     vertical-align: middle;
     line-height: 20px;
   }
@@ -92,13 +93,14 @@
   border-radius: 0px 5px 5px 0px;
   color: $footerChatButton;
   flex-grow: 1;
-  font-size: 1.2em;
+  @include font-size(16px);
   padding: 14px 10px;
   &__icon {
     background: $footerChatButtonBackground;
     fill: $footerChatButton;
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    vertical-align: middle;
+    width: 30px;
   }
 }
 
@@ -120,12 +122,11 @@
   .footer-row {
     clear: none;
   }
-  .js-footer-list {
-    &-is-hiden {
-      display: block;
-      padding-left: 0px;
-    }
+  .navigation-list {
+    display: block;
+    padding-left: 0px;
   }
+
   .footer-category {
     border-bottom: 0px;
     &__open {
@@ -138,6 +139,7 @@
     padding: 0px;
     &__link {
       font-size: 14px;
+      @include font-size(14px);
     }
   }
   .footer-status {

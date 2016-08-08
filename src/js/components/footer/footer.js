@@ -12,10 +12,10 @@ const DEFAULTS = {
     SELECTORS: {
         // NOTE: Use only js-hooks to elements
         HIDE_LIST: '.js-footer-toogle',
-        CHILD_LIST: '.js-footer-list'
+        CHILD_LIST: '.navigation-list'
     },
     MODIFIERS: {
-        HIDE_LIST: 'js-footer-list-is-hiden'
+        HIDE_LIST: 'navigation-list--is-hiden'
     },
     NAME_SPACE: '.footer'
 };
@@ -44,26 +44,22 @@ export class Footer extends Base {
             $root
         };
         // If we need some actions on initialization call it in constructor
-        this.hideList();
+        this.attachEvents();
     }
 
     /**
      * Attaches event listeners
      */
     attachEvents() {
-
-    }
-
-    /**
-     * Hide list element from footer
-     */
-    hideList() {
         this.elements.$root
             .on(`click${this.options.NAME_SPACE}`,
                 this.options.SELECTORS.HIDE_LIST,
                 this.toggleList.bind(this));
     }
 
+    /**
+     * Hide list element from footer
+     */
     toggleList(event) {
         // event.preventDefault();
         const footer = this.elements.$root.find(event.currentTarget);
@@ -76,18 +72,6 @@ export class Footer extends Base {
         }
     }
 
-    /**
-     * Removes listeners and all descriptions
-     * @returns {Object} - jQuery $root object
-     */
-    destroy() {
-        // Assume here could be plugins destroying & other util stuff
-        this.elements.$datepicker.datepicker('destroy');
-
-        // NOTE: If override destroy method
-        // Call super.destroy at the and of method to remove listeners, modifiers etc.
-        super.destroy();
-    }
 }
 
 export default Factory.registerComponent('Footer', Footer);
