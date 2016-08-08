@@ -46,4 +46,11 @@
     min-width: 142px;
     @include font-size(15px);
   }
+
+  &--thin {
+    height: 28px;
+    min-width: 0;
+    padding: 0 12px;
+    @include font-size(14px);
+  }
 }
