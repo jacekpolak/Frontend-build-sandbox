@@ -1,0 +1,223 @@
+$cartProductNumberColor: $tertiary;
+$cartWrapperColor: $white;
+$cartWrapperBorderColor: $gallery;
+$cartInfoPvColor: $seaGreen;
+$shoppingCartColor: $white;
+$shoppingCartBorderColor: $tertiary;
+$shoppingCartItem: $alto;
+$shoppingCartImageBorder: $alto;
+$shoppingCartProductAmmoutColor: $primary;
+$shoppingCartProductColor: $scarpaFlow;
+$shoppingCartRemoveColor: $secondary;
+$shoppingCartTotalBackground: $lightGray;
+$cartIconMobileColor: $gray;
+$cartIconTabletColor: $primary;
+
+.header__cart {
+  float: right;
+
+  @include tablet {
+    $root: &;
+    position: relative;
+
+    &-wrapper {
+      align-items: center;
+      background: $cartWrapperColor;
+      border: 1px $cartWrapperBorderColor solid;
+      border-radius: $globalBorderRadius;
+      display: flex;
+      flex-direction: row;
+      padding: 9px;
+      position: relative;
+      z-index: 10;
+    }
+
+    &:hover,
+    &:focus {
+      #{$root}-wrapper {
+        border-bottom-width: 0;
+        border-radius: $globalBorderRadius $globalBorderRadius 0 0;
+        border-color: $shoppingCartBorderColor;
+      }
+
+      .shopping-cart {
+        display: block;
+      }
+    }
+  }
+
+  .cart-info {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+      line-height: 1;
+      font-family: $franklin-medium;
+
+      &__pv {
+        color: $cartInfoPvColor;
+      }
+    }
+  }
+
+  .btn--thin {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+
+      margin-left: 40px;
+
+    }
+  }
+
+  .shopping-cart {
+    display: none;
+
+    @include tablet {
+      background: $shoppingCartColor;
+      border-radius: $globalBorderRadius 0 $globalBorderRadius $globalBorderRadius;
+      border: 1px $shoppingCartBorderColor solid;
+      position: absolute;
+      right: 0;
+      top: 50px;
+      width: 360px;
+      z-index: 9;
+
+      &__inner {
+        padding: 9px 15px;
+      }
+
+      &__item {
+        border-top: 1px $shoppingCartItem solid;
+        padding: 20px 0;
+        &:before {
+          display: none;
+        }
+
+        &-content {
+          align-items: stretch;
+          display: flex;
+          flex-direction: row;
+        }
+      }
+
+      &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+
+      &__img {
+        margin: 0 7px 0 0;
+        width: 55px;
+        img {
+          border: 1px $shoppingCartImageBorder solid;
+        }
+      }
+
+      &__title-header,
+      &__p-ammount {
+        color: $shoppingCartProductAmmoutColor;
+        font-family: $franklin-medium-cd;
+        text-transform: uppercase;
+        @include font-size(14px);
+      }
+
+      &__product {
+        justify-content: space-between;
+        color: $shoppingCartProductColor;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+      }
+
+      &__p-title {
+        font-family: $franklin-medium;
+        @include font-size(13px);
+      }
+
+      &__p-desc {
+        @include font-size(12px);
+      }
+
+      &__p-qant {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @include font-size(12px);
+      }
+
+      &__p-total {
+        font-family: $franklin-medium;
+      }
+
+      &__remove {
+        position: absolute;
+        top: 18px;
+        right: -5px;
+        svg {
+          fill: $shoppingCartRemoveColor;
+          height: 16px;
+          width: 16px;
+        }
+      }
+
+      &__total {
+        background: $shoppingCartTotalBackground;
+        padding: 15px;
+        border-radius: 0 0 6px 6px;
+      }
+
+      &__subtotal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &-price {
+          font-family: $franklin-medium;
+        }
+      }
+
+      &__btn {
+        margin-top: 15px;
+        text-align: right;
+      }
+    }
+  }
+
+  &-icon {
+    display: inline-block;
+    height: 30px;
+    position: relative;
+
+    @include tablet {
+      padding-right: 8px;
+    }
+
+    svg {
+      fill: $cartIconMobileColor;
+      height: 30px;
+      width: 30px;
+      vertical-align: middle;
+
+      @include tablet {
+        fill: $cartIconTabletColor;
+      }
+    }
+
+    .cart-products-number {
+      color: $cartProductNumberColor;
+      font-family: $franklin-medium-cd;
+      left: 9px;
+      line-height: 1;
+      position: absolute;
+      text-align: center;
+      top: 5px;
+      width: 14px;
+      @include font-size(12px);
+    }
+  }
+}
