@@ -5,7 +5,6 @@
   $root: &;
   $listWidth: 250px;
   $borderWidth: 1px;
-  $borderRadius: 3px;
   $index: 1;
   $throttle: .25s;
 
@@ -17,7 +16,7 @@
     position: relative;
     z-index: $index + 1;
     border: $borderWidth solid transparent;
-    border-radius: $borderRadius $borderRadius 0 0;
+    border-radius: $globalBorderRadius $globalBorderRadius 0 0;
     padding: 6px;
     text-decoration: none;
     transition: border-color, $throttle, linear;
@@ -63,7 +62,7 @@
     right: 0;
     margin-top: -$borderWidth;
     border: $borderWidth solid $borderTertiaryColor;
-    border-radius: $borderRadius 0 $borderRadius $borderRadius;
+    border-radius: $globalBorderRadius 0 $globalBorderRadius $globalBorderRadius;
     padding: 15px;
     visibility: hidden;
     transition: visibility, $throttle, linear;
