@@ -1,192 +1,160 @@
-.footer_rights {
-   background-color: $footerDarkGrey;
+.footer {
+  background-color: $footerGray;
 
-   p {
-     text-align: center;
-     margin: 0px;
-     padding: 15px 10px;
-   };
- };
-
-.footer-is-hiden {
-  display: none;
+  &-toggle-list {
+    border-bottom: 1px solid $footerDarkGrey;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 20px 23px;
+  }
 }
 
-.footer_contact_icon {
-  fill: $footerChatButton;
-  height: 20px;
-  vertical-align: middle;
-  width: 24px;
-}
-
-.footer-toggle-list {
+.footer-category {
   border-bottom: 1px solid $footerDarkGrey;
   font-weight: bold;
   line-height: 30px;
+  margin: 0px;
   padding: 20px 23px;
-  p:after {
-    content: "+";
-    color: $footerCrossColor;
+  &:last-child {
+    border-bottom: 0px;
+  }
+  &__label {
+    margin: 0px;
+  }
+  &__open {
+    fill: $footerCrossColor;
     float: right;
     font-size: 30px;
+    height: 36px;
     vertical-align: middle;
+    width: 36px;
+  }
+  &__open:after {
+    clear: both;
   }
 }
 
-.footer_body {
-  background-color: $footerGray;
-  font-size: 14px;
-
-  p {
-    margin: 0px;
-    font-size: 16px;
+.js-footer-list {
+  &-is-hiden {
+    display: none;
   }
+}
 
-  ul {
-    li {
-      border-bottom: 1px solid $footerDarkGrey;
-      line-height: 30px;
-      padding: 20px 23px 20px 0px;
-      font-weight: 300;
-      &:last-child {
-        border-bottom: 0px;
-        padding-bottom: 0px;
-      }
-      &:before {
-        content: initial;
-      }
-      ul {
-        display: none;
-      }
-    }
+.footer-list {
+  padding: 20px 23px 23px 0px;
+  border-bottom: 1px solid $footerDarkGrey;
+  &:last-child {
+    border-bottom: 0px;
+    padding-bottom: 0px;
   }
-
-  .footer_controll {
-    color: white;
-    padding: 15px 15px 15px 0px;
-    border-radius: 5px 0px 0px 5px;
-    &:before {
-      content: "\2022";
-      font-size: 50px;
-      vertical-align: middle;
-      line-height: 20px;
-    }
+  &:before {
+    content: initial;
   }
-
-  .footer_offline {
-    background-color: $chatOffline;
-  }
-
-  .footer_online {
-    background-color: $chatOnline;
-  }
-
-  .footer-btn-chat {
-    background: $footerChatButtonBackground;
-    border: 1px solid $footerDarkGrey;
-    border-radius: 0px 5px 5px 0px;
-    color: $footerChatButton;
-    flex-grow: 1;
-    font-size: 1.2em;
-    padding: 15px 10px;
-  }
-
-  .footer_link {
+  &__link {
     color: $baseFontColor;
-    &:link {
+    &:link, &:hover, &:active  {
       text-decoration: none;
     }
-    &:hover {
-      text-decoration: none;
-    }
-    &:active {
-      text-decoration: none;
-    }
-
   }
+}
 
-  .footer_connection {
-    padding: 20px 10px;
-    .footer_contact_icon {
-      fill: $footerChatButton;
-      height: 20px;
-      width: 20px;
+.footer-communication {
+  border-top: 1px solid $footerDarkGrey;
+  padding: 15px 20px 20px 15px;
+  &__label {
+    display: none;
+  }
+}
+
+.footer-status {
+  color: white;
+  border-radius: 5px 0px 0px 5px;
+  padding: 15px;
+  background-color: $chatOnline;
+  &__info {
+    margin: 0px;
+  }
+  &__info:before {
+    content: "\2022";
+    font-size: 50px;
+    vertical-align: middle;
+    line-height: 20px;
+  }
+}
+
+.footer-video {
+  display: none;
+}
+
+.communication-btn {
+  background: $footerChatButtonBackground;
+  border: 1px solid $footerDarkGrey;
+  border-radius: 0px 5px 5px 0px;
+  color: $footerChatButton;
+  flex-grow: 1;
+  font-size: 1.2em;
+  padding: 14px 10px;
+  &__icon {
+    background: $footerChatButtonBackground;
+    fill: $footerChatButton;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.footer-disclimer {
+  background-color: $footerDarkGrey;
+  text-align: center;
+  margin: 0px;
+  padding: 15px 10px;
+  &__info {
+    margin: 0px;
+  }
+}
+
+.footer-row {
+  clear: both;
+}
+
+@media (min-width: 62em) {
+  .footer-row {
+    clear: none;
+  }
+  .js-footer-list {
+    &-is-hiden {
+      display: block;
+      padding-left: 0px;
     }
-    p {
+  }
+  .footer-category {
+    border-bottom: 0px;
+    &__open {
       display: none;
     }
   }
-
-  .footer_contact {
-    padding: 15px 10px;
-    justify-content: space-around;
-
-    .footer-btn-chat {
-      background: $footerChatButtonBackground;
-      border: 1px solid $footerDarkGrey;
-      border-radius: 0px 5px 5px 0px;
-      color: $footerChatButton;
-      flex-grow: 1;
-      font-size: 1.2em;
-      padding: 14px 10px;
-    }
-
-    .footer__online {
-      background-color: $chatOnline;
-    }
-
-    .footer__offline {
-      background-color: $chatOffline;
-    }
-  }
-};
-
-.footer-is-show {
-  p:after {
-    content: "-";
-    color: $footerCrossColor;
-    float: right;
-    font-size: 50px;
-    vertical-align: middle;
-  }
-}
-
-@media (min-width: $desktop) and (max-width: $large-desktop) {
-  .footer-toggle-list {
+  .footer-list {
     border-bottom: 0px;
-    border-right: 1px solid $footerDarkGrey;
-    ul {
-      li {
-        border-bottom: 0px;
-      }
-    }
-    p:after {
-      display:none;
+    font-weight: normal;
+    padding: 0px;
+    &__link {
+      font-size: 14px;
     }
   }
-  .footer-is-hiden {
+  .footer-status {
+    border-radius: 5px 5px 0px 0px;
+  }
+  .communication-btn {
+    border-radius: 0px;
+  }
+  .footer-video {
+
     display: block;
-  }
-  .footer_body {
-    ul {
-      li {
-        padding: inherit;
-      }
+    &__youtube {
+      height: 100px;
+      width: 100%;
     }
-    p {
-      padding-bottom: 20px;
-    }
-    .footer_connection {
-      p {
-        font-weight: bold;
-        line-height: 30px;
-        display: block;
-      }
-    }
-    .footer_controll {
-      color: white;
-      padding: 4px 15px 3px 0px;
-      border-radius: 5px 5px 0px 0px;
+    &__link {
+      font-weight: bold;
     }
   }
 }

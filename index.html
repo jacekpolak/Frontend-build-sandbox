@@ -146,60 +146,92 @@
   </div>
 </div>
 
-<footer data-components="Footer" class="container">
-
-    <div class="footer_body row">
-        <div class="col-xs-12 col-lg-2 footer-toggle-list">
-            <p>SHOP BY BRANDS</p>
-            <ul class="footer-is-hiden">
-                <li><a class="footer_link" href="javascript:void(0)">Nutrilite</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Artistry</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Satinique</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Amway Home</a></li>
-            </ul>
+<footer data-components="Footer" class="footer" role="footer">
+    <div class="footer__body">
+        <div class="container">
+            <div class="col-xs-12 col-md-2 footer-category js-footer-toogle">
+                <p class="footer-category__label">SHOP BY BRANDS
+                    <svg class="svg-icon footer-category__open">
+                        <use class="js-list-icon" xlink:href="#icon-amway-icons-open"></use>
+                    </svg>
+                </p>
+                <ul class="js-footer-list js-footer-list-is-hiden">
+                    <li class="footer-list"><a class="footer-list__link" href="#">Nutrilite</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Artistry</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Satinique</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Amway Home</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-2 footer-category js-footer-toogle">
+                <p class="footer-category__label">ABOUT AMWAY
+                    <svg class="svg-icon footer-category__open">
+                        <use class="js-list-icon"  xlink:href="#icon-amway-icons-open"></use>
+                    </svg>
+                </p>
+                <ul class="js-footer-list js-footer-list-is-hiden">
+                    <li class="footer-list"><a class="footer-list__link" href="#">Who we are</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Our heritage</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">How we work</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-2 footer-category js-footer-toogle">
+                <p class="footer-category__label">SECURE SHOPPING
+                    <svg class="svg-icon footer-category__open">
+                        <use class="js-list-icon"  xlink:href="#icon-amway-icons-open"></use>
+                    </svg>
+                </p>
+                <ul class="js-footer-list js-footer-list-is-hiden">
+                    <li class="footer-list"><a class="footer-list__link" href="#">Privacy Policy</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Terms of use</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Satisfaction guarantee</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Delivery options</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-4 footer-category js-footer-toogle">
+                <p class="footer-category__label">AMWAY BUSINNESS OPPORTUNITY
+                    <svg class="svg-icon footer-category__open">
+                        <use class="js-list-icon"  xlink:href="#icon-amway-icons-open"></use>
+                    </svg>
+                </p>
+                <ul class="col-xs-12 col-md-5 js-footer-list js-footer-list-is-hiden">
+                    <li class="footer-list"><a class="footer-list__link" href="#">How it works</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Unique products</a></li>
+                    <li class="footer-list"><a class="footer-list__link" href="#">Success stories</a></li>
+                </ul>
+                <div class="col-xs-12 col-md-6 footer-video">
+                    <iframe class="footer-video__youtube"
+                            src="https://www.youtube.com/embed/KZQMoJTIDvI">
+                    </iframe>
+                    <a href="#" class="footer-video__link" alt="Wideo how Amway works?">How Amway works</a>
+                </div>
+            </div>
+            <div class="row footer-row">
+                <div class="col-xs-12 col-md-2  footer-communication">
+                    <p class="footer-communication__label">LIVE CHAT
+                    <p class="footer-communication__label">LIVE CHAT
+                    </p>
+                    <div class="col-xs-4 col-md-12 footer-status">
+                        <p class="footer-status__info">Online</p>
+                    </div>
+                    <button class="col-xs-8 col-md-12 communication-btn">
+                        <svg class="svg-icon communication-btn__icon">
+                            <use xlink:href="#icon-amway-icons-comment"></use>
+                        </svg>
+                        Chat now
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-12 col-lg-2 footer-toggle-list">
-            <p>ABOUT AMWAY</p>
-            <ul class="footer-is-hiden">
-                <li><a class="footer_link" href="javascript:void(0)">Who we are</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Our heritage</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">How we work</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Contact us</a></li>
-            </ul>
         </div>
-        <div class="col-xs-12 col-lg-2 footer-toggle-list">
-            <p>SECURE SHOPPING</p>
-            <ul class="footer-is-hiden">
-                <li><a class="footer_link" href="javascript:void(0)">Privacy Policy</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Terms of use</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Satisfaction guarantee</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Delivery options</a></li>
-            </ul>
+    <div class="footer__credital">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12 footer-disclimer">
+                    <p class="footer-disclimer__info">&copy; 2011-2016 Amway Europe. All rights reserved.</p>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-12 col-lg-4 footer-toggle-list">
-            <p>AMWAY BUSINNESS OPPORTUNITY</p>
-            <ul class="footer-is-hiden">
-                <li><a class="footer_link" href="javascript:void(0)">How it works</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Unique products</a></li>
-                <li><a class="footer_link" href="javascript:void(0)">Success stories</a></li>
-            </ul>
-        </div>
-        <div class="col-xs-12 col-lg-2 footer_connection ">
-            <p>LIVE CHAT</p>
-            <div class="col-xs-4 col-lg-12 footer_controll footer_offline footer_online">Online</div>
-            <button class="footer-btn-chat col-xs-8 col-lg-12">
-                <svg class="svg-icon footer_contact_icon">
-                    <use xlink:href="#icon-amway-icons-comment"></use>
-                </svg>
-                Chat now
-            </button>
-        </div>
-
-        <div class="col-xs-12 col-lg-12 footer_rights">
-            <p>&copy; 2011-2016 Amway Europe. All rights reserved.</p>
-        </div>
-
-
     </div>
 
 </footer>

@@ -11,12 +11,11 @@ import Factory from 'helpers/Factory.js';
 const DEFAULTS = {
     SELECTORS: {
         // NOTE: Use only js-hooks to elements
-        HIDE_LIST: '.footer-toggle-list',
-        CHILD_LIST: 'ul'
+        HIDE_LIST: '.js-footer-toogle',
+        CHILD_LIST: '.js-footer-list'
     },
     MODIFIERS: {
-        // This should be related to CSS Style Guide: BEM modifier definition
-        ACTIVE: 'footer--is--hiden'
+        HIDE_LIST: 'js-footer-list-is-hiden'
     },
     NAME_SPACE: '.footer'
 };
@@ -42,8 +41,7 @@ export class Footer extends Base {
         // Here might be exceptions as window or document
         // NOTE: You'll rarely need exact child jQuery objects
         this.elements = {
-            $root,
-            $footerList: $root.find(this.options.SELECTORS.CHILD_LIST)
+            $root
         };
         // If we need some actions on initialization call it in constructor
         this.hideList();
@@ -60,6 +58,7 @@ export class Footer extends Base {
      * Hide list element from footer
      */
     hideList() {
+        console.log('2');
         this.elements.$root
             .on(`click${this.options.NAME_SPACE}`,
                 this.options.SELECTORS.HIDE_LIST,
@@ -70,8 +69,12 @@ export class Footer extends Base {
         // event.preventDefault();
         const footer = this.elements.$root.find(event.currentTarget);
         const list = footer.find(this.options.SELECTORS.CHILD_LIST);
-        list.toggleClass(this.options.MODIFIERS.HIDE_LIST);
-        footer.toggleClass('footer-is-show');
+        list.toggleClass('js-footer-list-is-hiden');
+        if (footer.find('.js-list-icon').attr('xlink:href') === '#icon-amway-icons-minimize') {
+            footer.find('.js-list-icon').attr('xlink:href', '#icon-amway-icons-open');
+        } else {
+            footer.find('.js-list-icon').attr('xlink:href', '#icon-amway-icons-minimize');
+        }
     }
 
     /**
