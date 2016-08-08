@@ -68,7 +68,7 @@ export class Footer extends Base {
         // event.preventDefault();
         const footer = this.elements.$root.find(event.currentTarget);
         const list = footer.find(this.options.SELECTORS.CHILD_LIST);
-        list.toggleClass('js-footer-list-is-hiden');
+        list.toggleClass(this.options.MODIFIERS.HIDE_LIST);
         if (footer.find('.js-list-icon').attr('xlink:href') === '#icon-amway-icons-minimize') {
             footer.find('.js-list-icon').attr('xlink:href', '#icon-amway-icons-open');
         } else {
