@@ -49,6 +49,7 @@
     width: 1px;
     background-color: $borderSixColor;
     border-left: 1px solid $borderSeventhColor;
+    transform: translateY(0);
   }
   &:after {
     left: auto;
