@@ -1,0 +1,41 @@
+@import "./../../base/variables";
+@import "./../../base/mixins";
+
+.order-list {
+  $root: &;
+
+  &__title {
+    font-family: $franklin-medium;
+    color: $scarpaFlow;
+  }
+
+  &__details {
+    margin-top: 2px;
+  }
+
+  &__state {
+    display: flex;
+
+    & ~ & {
+      margin-top: 7px;
+    }
+
+    &-item {
+      padding-right: 10px;
+
+      & ~ & {
+        padding-left: 10px;
+      }
+
+      &--separated {
+        & ~ & {
+          border-left: 1px solid $alto;
+        }
+      }
+
+      &--pv {
+        color: $primary;
+      }
+    }
+  }
+}
