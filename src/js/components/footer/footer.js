@@ -58,7 +58,6 @@ export class Footer extends Base {
      * Hide list element from footer
      */
     hideList() {
-        console.log('2');
         this.elements.$root
             .on(`click${this.options.NAME_SPACE}`,
                 this.options.SELECTORS.HIDE_LIST,
