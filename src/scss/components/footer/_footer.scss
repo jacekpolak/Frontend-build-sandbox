@@ -70,26 +70,36 @@ $topFooterIconEmailColor: $alto;
 
   &__socialmedia {
     @include desktop {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: flex-end;
     }
   }
 
-  &__icons {
+  &__icons-list {
     @include desktop {
-      display: flex;
       align-items: center;
+      display: flex;
     }
   }
 
-  &__link {
+  .icons-list__item {
     display: inline-block;
-    text-decoration: none;
+    padding: 0;
 
     &:not(:last-child) {
       margin-right: 10px;
     }
+
+    &:before {
+      content: "";
+      height: 0;
+      width: 0;
+    }
+  }
+
+  .icons-list__item-a {
+    text-decoration: none;
 
     .svg-icon {
       background: $topFooterIconsBgColor;
