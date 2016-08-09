@@ -1,12 +1,13 @@
-@import "./../../base/variables";
-@import "./../../base/mixins";
-
 .order-list {
   $root: &;
+  $titleFontFamily: $franklin-medium;
+  $titleColor: $scarpaFlow;
+  $separatorColor: $alto;
+  $pvHighlight: $primary;
 
   &__title {
-    font-family: $franklin-medium;
-    color: $scarpaFlow;
+    font-family: $titleFontFamily;
+    color: $titleColor;
   }
 
   &__details {
@@ -29,12 +30,12 @@
 
       &--separated {
         & ~ & {
-          border-left: 1px solid $alto;
+          border-left: 1px solid $separatorColor;
         }
       }
 
       &--pv {
-        color: $primary;
+        color: $pvHighlight;
       }
     }
   }

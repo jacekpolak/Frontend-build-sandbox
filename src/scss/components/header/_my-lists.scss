@@ -1,12 +1,18 @@
-@import "./../../base/variables";
-@import "./../../base/mixins";
-
 .my-lists {
   $root: &;
   $listWidth: 250px;
   $borderWidth: 1px;
   $index: 1;
   $throttle: .25s;
+  $sectionStrokeColor: $alto;
+  $listsIconFill: $gray;
+  $indicatorIconFill: $secondary;
+  $plusIconFill: $secondary;
+  $containerBackground: $white;
+  $containerStrokeColor: $borderTertiaryColor;
+  $containerStrokeRadius: $globalBorderRadius;
+  $titleFontFamily: $franklin-medium-cd;
+  $titleColor: $primary;
 
   // NOTE: I believe this would be inside flex container
   // So no need to use float
@@ -24,7 +30,7 @@
   &__icon {
     width: 35px;
     height: 35px;
-    fill: $gray;
+    fill: $listsIconFill;
   }
 
   &__indicator {
@@ -40,16 +46,14 @@
       position: relative;
       z-index: $index + 1;
       border: $borderWidth solid transparent;
-      border-radius: $globalBorderRadius $globalBorderRadius 0 0;
+      border-radius: $containerStrokeRadius $containerStrokeRadius 0 0;
       padding: 6px;
       text-decoration: none;
-      transition: border-color, $throttle, linear;
-      transition-delay: $throttle;
       cursor: pointer;
-      background: $white;
+      background: $containerBackground;
 
       #{$root}:hover & {
-        border-color: $borderTertiaryColor $borderTertiaryColor transparent;
+        border-color: $containerStrokeColor $containerStrokeColor transparent;
       }
     }
 
@@ -58,19 +62,11 @@
       vertical-align: middle;
     }
 
-    &__icon {
-      width: 35px;
-      height: 35px;
-      fill: $gray;
-    }
-
     &__indicator {
       display: inline;
       width: 18px;
       height: 17px;
-      fill: $secondary;
-      transition: transform, $throttle, linear;
-      transition-delay: $throttle;
+      fill: $indicatorIconFill;
 
       #{$root}:hover & {
         transform: rotate(180deg);
@@ -85,13 +81,11 @@
       top: 100%;
       right: 0;
       margin-top: -$borderWidth;
-      border: $borderWidth solid $borderTertiaryColor;
-      border-radius: $globalBorderRadius 0 $globalBorderRadius $globalBorderRadius;
+      border: $borderWidth solid $containerStrokeColor;
+      border-radius: $containerStrokeRadius 0 $containerStrokeRadius $containerStrokeRadius;
       padding: 15px;
       visibility: hidden;
-      transition: visibility, $throttle, linear;
-      transition-delay: $throttle;
-      background: $white;
+      background: $containerBackground;
 
       #{$root}:hover & {
         visibility: visible;
@@ -112,15 +106,15 @@
       }
 
       & ~ & {
-        border-top: 1px solid $alto;
+        border-top: 1px solid $sectionStrokeColor;
         padding-top: 15px;
       }
     }
 
     &__title {
-      font-family: $franklin-medium-cd;
+      font-family: $titleFontFamily;
       text-transform: uppercase;
-      color: $primary;
+      color: $titleColor;
     }
 
     &__add {
@@ -133,7 +127,7 @@
       width: 20px;
       height: 20px;
       vertical-align: middle;
-      fill: $secondary;
+      fill: $plusIconFill;
     }
 
     &__create {

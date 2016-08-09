@@ -1,12 +1,7 @@
-// NOTE: This is a template MyLists
-
-// Define dependencies on top of the module
 import $ from 'jquery';
 import Base from 'components/base/base.js';
 import Factory from 'helpers/Factory.js';
 
-// Then define Component's defaults
-// Use uppercase for all keys and sub-keys
 const DEFAULTS = {
     SELECTORS: {
         CREATE: '.js-create',
@@ -18,8 +13,6 @@ const DEFAULTS = {
     NAME_SPACE: '.myLists'
 };
 
-// NOTE: export need for tests
-// WARN: Always extend Base component to provide shared API (see Base class)
 export class MyLists extends Base {
     /**
      * Constructor
@@ -36,58 +29,6 @@ export class MyLists extends Base {
         this.elements = {
             $root
         };
-
-        // this.attachEvents();
-    }
-
-    /**
-     * Attaches event listeners
-     */
-    attachEvents() {
-        this.elements.$root
-            .on(`click${this.options.NAME_SPACE}`,
-            this.options.SELECTORS.CREATE,
-            this.showForm.bind(this))
-            .on(`submit${this.options.NAME_SPACE}`,
-            this.options.SELECTORS.FORM,
-            this.handleSubmit.bind(this));
-    }
-
-    showForm(event) {
-        event.preventDefault();
-
-        this.elements.$root.addClass(this.options.MODIFIERS.EDITABLE);
-    }
-
-    hideForm() {
-        this.elements.$root.removeClass(this.options.MODIFIERS.EDITABLE);
-    }
-
-    handleSubmit(event) {
-        event.preventDefault();
-
-        // $.ajax({
-        //    url: this.options.SERVICE,
-        //    method: 'POST',
-        //    success: data => {
-        //        event.target.reset();
-        //        this.hideForm();
-        //    },
-        //    complete: () => {
-        //
-        //    }
-        // });
-
-        event.target.reset();
-        this.hideForm();
-    }
-
-    /**
-     * Removes listeners and all descriptions
-     * @returns {Object} - jQuery $root object
-     */
-    destroy() {
-        super.destroy();
     }
 }
 
