@@ -16,7 +16,6 @@
 
 <div data-components="Component" data-options='{"Component": {"option": "value"}}'>
   <div class="container">
-
   <div class="header__cart" tabindex="0" aria-haspopup="true">
     <div class="header__cart-wrapper">
       <a href="#" class="header__cart-icon" title="Go to your cart">
@@ -125,6 +124,71 @@
 
   </div>
   <!-- / .header__cart -->
+
+    <div data-components="MyLists" class="my-lists">
+      <a class="my-lists__direct" href="#">
+        <svg class="svg-icon my-lists__icon">
+          <use xlink:href="#icon-amway-icons-my-list"></use>
+        </svg>
+        <svg class="svg-icon my-lists__indicator">
+          <use xlink:href="#icon-amway-icons-down-arrowhead"></use>
+        </svg>
+      </a>
+      <div class="my-lists__container">
+        <section class="my-lists__section">
+          <div class="my-lists__title">My Lists</div>
+        </section>
+        <section class="my-lists__section">
+          <div class="order-list">
+            <div class="order-list__title">List 1: Favourites</div>
+            <div class="order-list__details">
+              <div class="order-list__state">
+                <div class="order-list__state-item order-list__state-item--separated">5 items</div>
+                <div class="order-list__state-item order-list__state-item--separated order-list__state-item--pv">50PV</div>
+                <div class="order-list__state-item order-list__state-item--separated">$10.25</div>
+              </div>
+              <div class="order-list__state">
+                <div class="order-list__state-item js-view-order"><a href="#">View order</a></div>
+                <div class="order-list__state-item js-add-to-cart"><a href="#">Move to cart</a></div>
+              </div>
+              <div class="order-list__entries js-entries"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-lists__section">
+          <div class="order-list">
+            <div class="order-list__title">List 2: Fred Smith</div>
+            <div class="order-list__details">
+              <div class="order-list__state">
+                <div class="order-list__state-item order-list__state-item--separated">1 item</div>
+                <div class="order-list__state-item order-list__state-item--separated order-list__state-item--pv">10PV</div>
+                <div class="order-list__state-item order-list__state-item--separated">$10.25</div>
+              </div>
+              <div class="order-list__state">
+                <div class="order-list__state-item js-view-order"><a href="#">View order</a></div>
+                <div class="order-list__state-item js-add-to-cart"><a href="#">Move to cart</a></div>
+              </div>
+              <div class="order-list__entries js-entries"></div>
+            </div>
+          </div>
+        </section>
+        <section class="my-lists__section">
+          <div class="my-lists__add">
+            <svg class="svg-icon my-lists__plus">
+              <use xlink:href="#icon-amway-icons-open"></use>
+            </svg>
+            <a class="js-create" href="#">Create a new list</a>
+          </div>
+          <form class="my-lists__create js-form">
+            <div class="text-input">
+              <input class="text-input__focus" type="text" placeholder="List Title" name="title">
+            </div>
+            <button class="btn btn--primary btn--sm">Create</button>
+            <button class="btn btn--tertiary btn--sm">Cancel</button>
+          </form>
+        </section>
+      </div>
+    </div>
 
     <h3>My Awesome Component</h3>
     <div class="js-child">Destroy Component</div>
@@ -253,70 +317,6 @@
     <svg class="svg-icon">
       <use xlink:href="#icon-amway-icons-cart-empty"></use>
     </svg>
-  </div>
-</div>
-
-<div class="container">
-  <div data-components="MyLists" class="my-lists">
-    <a class="my-lists__direct" href="#">
-      <svg class="svg-icon my-lists__icon">
-        <use xlink:href="#icon-amway-icons-my-list"></use>
-      </svg>
-      <svg class="svg-icon my-lists__indicator">
-        <use xlink:href="#icon-amway-icons-down-arrowhead"></use>
-      </svg>
-    </a>
-    <div class="my-lists__container">
-      <section class="my-lists__section">
-        <div class="my-lists__title">My Lists</div>
-      </section>
-      <section class="my-lists__section">
-        <div class="order-list">
-          <div class="order-list__title">List 1: Favourites</div>
-          <div class="order-list__details">
-            <div class="order-list__state">
-              <div class="order-list__state-item order-list__state-item--separated">5 items</div>
-              <div class="order-list__state-item order-list__state-item--separated order-list__state-item--pv">50PV</div>
-              <div class="order-list__state-item order-list__state-item--separated">$10.25</div>
-            </div>
-            <div class="order-list__state">
-              <div class="order-list__state-item js-view-order"><a href="#">View order</a></div>
-              <div class="order-list__state-item js-add-to-cart"><a href="#">Move to cart</a></div>
-            </div>
-            <div class="order-list__entries js-entries"></div>
-          </div>
-        </div>
-      </section>
-      <section class="my-lists__section">
-        <div class="order-list">
-          <div class="order-list__title">List 2: Fred Smith</div>
-          <div class="order-list__details">
-            <div class="order-list__state">
-              <div class="order-list__state-item order-list__state-item--separated">1 item</div>
-              <div class="order-list__state-item order-list__state-item--separated order-list__state-item--pv">10PV</div>
-              <div class="order-list__state-item order-list__state-item--separated">$10.25</div>
-            </div>
-            <div class="order-list__state">
-              <div class="order-list__state-item js-view-order"><a href="#">View order</a></div>
-              <div class="order-list__state-item js-add-to-cart"><a href="#">Move to cart</a></div>
-            </div>
-            <div class="order-list__entries js-entries"></div>
-          </div>
-        </div>
-      </section>
-      <section class="my-lists__section">
-        <div class="my-lists__add">
-          <span class="my-lists__add-link"><a class="js-create" href="#">Create a new list</a></span>
-        </div>
-        <form class="my-lists__create js-form">
-          <div class="text-input">
-            <input class="text-input__focus" type="text" placeholder="List Title" name="title">
-          </div>
-          <button class="btn btn--primary btn--sm">Create</button>
-          <button class="btn btn--tertiary btn--sm">Cancel</button>
-        </form>
-      </section>
-    </div>
   </div>
 </div>
 

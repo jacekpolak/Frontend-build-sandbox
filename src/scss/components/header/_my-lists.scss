@@ -8,25 +8,12 @@
   $index: 1;
   $throttle: .25s;
 
-  display: inline-block;
-  @include font-size(14px);
+  // NOTE: I believe this would be inside flex container
+  // So no need to use float
+  float: right;
 
-  &__direct {
-    display: inline-block;
-    position: relative;
-    z-index: $index + 1;
-    border: $borderWidth solid transparent;
-    border-radius: $globalBorderRadius $globalBorderRadius 0 0;
-    padding: 6px;
-    text-decoration: none;
-    transition: border-color, $throttle, linear;
-    transition-delay: $throttle;
-    cursor: pointer;
-    background: $white;
-
-    #{$root}:hover & {
-      border-color: $borderTertiaryColor $borderTertiaryColor transparent;
-    }
+  &__container {
+    display: none;
   }
 
   &__icon,
@@ -41,94 +28,120 @@
   }
 
   &__indicator {
-    width: 18px;
-    height: 17px;
-    fill: $secondary;
-    transition: transform, $throttle, linear;
-    transition-delay: $throttle;
-
-    #{$root}:hover & {
-      transform: rotate(180deg);
-    }
-  }
-
-  &__container {
-    min-width: $listWidth;
-    position: absolute;
-    // NOTE: To hide on mobile
     display: none;
-    z-index: -1;
-    top: 100%;
-    right: 0;
-    margin-top: -$borderWidth;
-    border: $borderWidth solid $borderTertiaryColor;
-    border-radius: $globalBorderRadius 0 $globalBorderRadius $globalBorderRadius;
-    padding: 15px;
-    visibility: hidden;
-    transition: visibility, $throttle, linear;
-    transition-delay: $throttle;
-    background: $white;
-
-    #{$root}:hover & {
-      visibility: visible;
-      z-index: $index;
-    }
   }
 
-  &__section {
-    padding-bottom: 18px;
-
-    &:first-child {
-      padding-bottom: 4px;
-    }
-
-    &:last-child {
-      padding-top: 10px;
-      padding-bottom: 0;
-    }
-
-    & ~ & {
-      border-top: 1px solid $alto;
-      padding-top: 15px;
-    }
-  }
-
-  &__title {
-    font-family: $franklin-medium-cd;
-    text-transform: uppercase;
-    color: $primary;
-  }
-
-  &__add {
-    #{$root}--editable & {
-      display: none;
-    }
-  }
-
-  &__add-link {
-
-    &::before {
-      content: "+ ";
-      display: inline;
-      vertical-align: middle;
-      @include font-size(24px);
-      color: $secondary;
-    }
-  }
-
-  &__create {
-    display: none;
-
-    #{$root}--editable & {
-      display: block;
-    }
-  }
-
-  @include tablet {
+  @include desktop {
     position: relative;
+    @include font-size(14px);
+
+    &__direct {
+      display: inline-block;
+      position: relative;
+      z-index: $index + 1;
+      border: $borderWidth solid transparent;
+      border-radius: $globalBorderRadius $globalBorderRadius 0 0;
+      padding: 6px;
+      text-decoration: none;
+      transition: border-color, $throttle, linear;
+      transition-delay: $throttle;
+      cursor: pointer;
+      background: $white;
+
+      #{$root}:hover & {
+        border-color: $borderTertiaryColor $borderTertiaryColor transparent;
+      }
+    }
+
+    &__icon,
+    &__indicator {
+      vertical-align: middle;
+    }
+
+    &__icon {
+      width: 35px;
+      height: 35px;
+      fill: $gray;
+    }
+
+    &__indicator {
+      display: inline;
+      width: 18px;
+      height: 17px;
+      fill: $secondary;
+      transition: transform, $throttle, linear;
+      transition-delay: $throttle;
+
+      #{$root}:hover & {
+        transform: rotate(180deg);
+      }
+    }
 
     &__container {
+      min-width: $listWidth;
+      position: absolute;
       display: block;
+      z-index: -1;
+      top: 100%;
+      right: 0;
+      margin-top: -$borderWidth;
+      border: $borderWidth solid $borderTertiaryColor;
+      border-radius: $globalBorderRadius 0 $globalBorderRadius $globalBorderRadius;
+      padding: 15px;
+      visibility: hidden;
+      transition: visibility, $throttle, linear;
+      transition-delay: $throttle;
+      background: $white;
+
+      #{$root}:hover & {
+        visibility: visible;
+        z-index: $index;
+      }
+    }
+
+    &__section {
+      padding-bottom: 18px;
+
+      &:first-child {
+        padding-bottom: 4px;
+      }
+
+      &:last-child {
+        padding-top: 10px;
+        padding-bottom: 0;
+      }
+
+      & ~ & {
+        border-top: 1px solid $alto;
+        padding-top: 15px;
+      }
+    }
+
+    &__title {
+      font-family: $franklin-medium-cd;
+      text-transform: uppercase;
+      color: $primary;
+    }
+
+    &__add {
+      #{$root}--editable & {
+        display: none;
+      }
+    }
+
+    &__plus {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      fill: $secondary;
+    }
+
+    &__create {
+      display: none;
+
+      #{$root}--editable & {
+        display: block;
+      }
     }
   }
 }

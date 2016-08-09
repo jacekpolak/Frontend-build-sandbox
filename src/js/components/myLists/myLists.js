@@ -37,7 +37,7 @@ export class MyLists extends Base {
             $root
         };
 
-        this.attachEvents();
+        // this.attachEvents();
     }
 
     /**
