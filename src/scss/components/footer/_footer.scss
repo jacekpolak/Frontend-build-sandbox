@@ -4,7 +4,6 @@
   &-toggle-list {
     border-bottom: 1px solid $footerDarkGrey;
     font-weight: bold;
-    line-height: 30px;
     padding: 20px 23px;
   }
 }
@@ -12,74 +11,90 @@
 .footer-category {
   border-bottom: 1px solid $footerDarkGrey;
   font-weight: bold;
-  line-height: 30px;
-  margin: 0px;
-  padding: 20px 0px 23px 0px;
+  margin: 0;
+  padding: 20px 0 23px 0;
+
   &:last-child {
-    border-bottom: 0px;
+    border-bottom: 0;
   }
+
   &__label {
-    margin: 0px;
+    margin: 0;
+    text-transform: uppercase;
+    &-hide {
+      display: none;
+    }
+    &-open,
+    &-minimize {
+      fill: $footerCrossColor;
+      float: right;
+      height: 36px;
+      width: 36px;
+    }
   }
-  &__open {
-    fill: $footerCrossColor;
-    float: right;
-    @include font-size(30px);
-    height: 36px;
-    vertical-align: middle;
-    width: 36px;
-  }
+
   &__open:after {
     clear: both;
   }
 }
 
 .navigation-list {
+
   &--is-hiden {
     display: none;
   }
 
+  &__item {
+    &:before {
+      content: initial;
+    }
+
+    border-bottom: 1px solid $footerDarkGrey;
+
+    &:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    &-link {
+      color: $baseFontColor;
+      display: block;
+
+      &:link,
+      &:hover,
+      &:active  {
+        text-decoration: none;
+      }
+    }
+    padding: 20px 23px 23px 0;
+    width: 100%;
+  }
 }
 
-.footer-list {
-  padding: 20px 23px 23px 0px;
-  border-bottom: 1px solid $footerDarkGrey;
-  &:last-child {
-    border-bottom: 0px;
-    padding-bottom: 0px;
-  }
-  &:before {
-    content: initial;
-  }
-  &__link {
-    color: $baseFontColor;
-    &:link, &:hover, &:active  {
-      text-decoration: none;
-    }
-  }
-}
 .footer-communication {
   border-top: 1px solid $footerDarkGrey;
   padding: 15px 20px 20px 15px;
+
   &__label {
     display: none;
   }
 }
 
 .footer-status {
-  color: white;
-  border-radius: 5px 0px 0px 5px;
-  padding: 15px;
+  color: $footerChatButtonBackground;
+  border-radius: 5px 0 0 5px;
+  line-height: 0.5;
+  padding: 17px 0px 18px 0px;
   background-color: $chatOnline;
+
   &__info {
-    margin: 0px;
+    margin: 0;
   }
+
   &__info:before {
     content: "\2022";
-
     @include font-size(50px);
     vertical-align: middle;
-    line-height: 20px;
   }
 }
 
@@ -90,27 +105,41 @@
 .communication-btn {
   background: $footerChatButtonBackground;
   border: 1px solid $footerDarkGrey;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0 5px 5px 0;
   color: $footerChatButton;
+  cursor: pointer;
   flex-grow: 1;
   @include font-size(16px);
   padding: 14px 10px;
-  &__icon {
-    background: $footerChatButtonBackground;
-    fill: $footerChatButton;
-    height: 30px;
-    vertical-align: middle;
-    width: 30px;
+  text-decoration: none;
+  text-align: center;
+
+  &:link,
+  &:hover,
+  &:active  {
+    text-decoration: none;
+  }
+
+  &__label {
+    &-icon {
+      background: $footerChatButtonBackground;
+      fill: $footerChatButton;
+      height: 30px;
+      vertical-align: middle;
+      width: 30px;
+    }
   }
 }
 
 .footer-disclimer {
   background-color: $footerDarkGrey;
   text-align: center;
-  margin: 0px;
+  margin: 0;
   padding: 15px 10px;
+
   &__info {
-    margin: 0px;
+    margin: 0;
+    @include font-size(13px);
   }
 }
 
@@ -118,43 +147,74 @@
   clear: both;
 }
 
-@media (min-width: 62em) {
+@media (min-width: $tablet) {
   .footer-row {
     clear: none;
   }
-  .navigation-list {
-    display: block;
-    padding-left: 0px;
-  }
 
   .footer-category {
-    border-bottom: 0px;
-    &__open {
-      display: none;
+    border-bottom: 0;
+    border-right: 1px solid $footerDarkGrey;
+    padding-left: 15px;
+
+
+
+    &__label {
+      padding-bottom: 15px;
+      &-open,
+      &-minimize {
+        display: none;
+      }
     }
   }
+
+  .navigation-list {
+    display: block;
+    padding: 0 10px 10px 0;
+
+    &__item {
+      border-bottom: 0;
+      padding: 0 10px 10px 0;
+      font-weight: normal;
+    }
+  }
+
   .footer-list {
-    border-bottom: 0px;
+    border-bottom: 0;
     font-weight: normal;
-    padding: 0px;
+    padding: 0;
+
     &__link {
       font-size: 14px;
       @include font-size(14px);
     }
   }
+
   .footer-status {
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0 0;
+    line-height: 0.5;
+    padding: 5px 0px 5px 0px;
   }
+
   .communication-btn {
-    border-radius: 0px;
+    border-radius: 0;
+    &__label {
+      margin: 0px;
+      &-item {
+        vertical-align: middle;
+      }
+    }
   }
+
   .footer-video {
 
     display: block;
+
     &__youtube {
       height: 100px;
       width: 100%;
     }
+
     &__link {
       font-weight: bold;
     }

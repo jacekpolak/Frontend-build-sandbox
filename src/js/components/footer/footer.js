@@ -12,10 +12,13 @@ const DEFAULTS = {
     SELECTORS: {
         // NOTE: Use only js-hooks to elements
         HIDE_LIST: '.js-footer-toogle',
-        CHILD_LIST: '.navigation-list'
+        CHILD_LIST: '.navigation-list',
+        ICON_OPEN: 'footer-category__label-open',
+        ICON_MINIMIZE: '.footer-category__label-minimize'
     },
     MODIFIERS: {
-        HIDE_LIST: 'navigation-list--is-hiden'
+        HIDE_LIST: 'navigation-list--is-hiden',
+        HIDE_ICON: 'footer-category__label-hide'
     },
     NAME_SPACE: '.footer'
 };
@@ -63,13 +66,21 @@ export class Footer extends Base {
     toggleList(event) {
         // event.preventDefault();
         const footer = this.elements.$root.find(event.currentTarget);
-        const list = footer.find(this.options.SELECTORS.CHILD_LIST);
-        list.toggleClass(this.options.MODIFIERS.HIDE_LIST);
-        if (footer.find('.js-list-icon').attr('xlink:href') === '#icon-amway-icons-minimize') {
-            footer.find('.js-list-icon').attr('xlink:href', '#icon-amway-icons-open');
-        } else {
-            footer.find('.js-list-icon').attr('xlink:href', '#icon-amway-icons-minimize');
-        }
+
+        footer.find(this.options.MODIFIERS.CHILD_LIST)
+            .toggleClass(this.options.MODIFIERS.HIDE_LIST);
+        footer.find(this.options.MODIFIERS.ICON_OPEN)
+            .toggleClass(this.options.MODIFIERS.HIDE_ICON);
+        footer.find(this.options.MODIFIERS.ICON_MINIMIZE)
+            .toggleClass(this.options.MODIFIERS.HIDE_ICON);
+        // footer.toggleClass(this.options.MODIFIERS.HIDE_LIST);
+        // const list = footer.find(this.options.SELECTORS.CHILD_LIST);
+        // list.toggleClass(this.options.MODIFIERS.HIDE_LIST);
+        // if (footer.find('.js-list-icon').attr('xlink:href') === '#icon-amway-icons-minimize') {
+        //     footer.find('.js-list-icon').attr('xlink:href', '#icon-amway-icons-open');
+        // } else {
+        //     footer.find('.js-list-icon').attr('xlink:href', '#icon-amway-icons-minimize');
+        // }
     }
 
 }
