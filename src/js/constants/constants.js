@@ -5,5 +5,6 @@ export const UTILS = {
 };
 
 export const EVENTS = keyMirror({
-    LOGIN: null
+    LOGIN: null,
+    TOGGLE: null
 });
