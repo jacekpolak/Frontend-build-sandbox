@@ -2,16 +2,7 @@ import $ from 'jquery';
 import Base from 'components/base/base.js';
 import Factory from 'helpers/Factory.js';
 
-const DEFAULTS = {
-    SELECTORS: {
-        CREATE: '.js-create',
-        FORM: '.js-form'
-    },
-    MODIFIERS: {
-        EDITABLE: 'my-lists--editable'
-    },
-    NAME_SPACE: '.myLists'
-};
+const DEFAULTS = {};
 
 export class MyLists extends Base {
     /**
