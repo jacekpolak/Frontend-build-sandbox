@@ -1,0 +1,138 @@
+$topFooterBgColor: $tertiary;
+$topFooterTextColor: $white;
+$topFooterIconsBgColor: $white;
+$topFooterIconsTextColor: $primary;
+$topFooterFont: $franklin-medium-cd;
+$topFooterIconEmailColor: $alto;
+
+.footer {
+
+  &__top {
+    background: $topFooterBgColor;
+    line-height: calculateRem(48px);
+    padding-top: $globalVerticalMargin;
+    padding-bottom: $globalVerticalMargin;
+  }
+
+  &__title {
+    color: $topFooterTextColor;
+    font-family: $topFooterFont;
+    text-transform: uppercase;
+
+    @include font-size(16px);
+
+    @include desktop {
+      padding-right: 10px;
+    }
+  }
+
+  &__newsletter {
+    margin-bottom: 0;
+
+    @include desktop {
+      display: flex;
+      padding-right: 0;
+    }
+
+    .text-input {
+      align-items: center;
+      background: $white;
+      border: 1px solid $basicInputColor;
+      border-radius: $globalBorderRadius;
+      display: flex;
+      font-size: 1rem;
+      line-height: 2rem;
+      margin-bottom: 0;
+      padding: 6px 10px;
+
+      &__focus {
+        border-width: 0;
+        height: 32px;
+        padding: 0 7px;
+      }
+    }
+  }
+
+  &__form {
+    width: 100%;
+    @include desktop {
+      width: calc( 100% - 210px);
+    }
+  }
+
+  &__btn-submit {
+    background-color: transparent;
+    border-width: 0;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__socialmedia {
+    @include desktop {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__icons-list {
+    @include desktop {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  .icons-list__item {
+    display: inline-block;
+    padding: 0;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &:before {
+      content: "";
+      height: 0;
+      width: 0;
+    }
+  }
+
+  .icons-list__item-a {
+    text-decoration: none;
+
+    .svg-icon {
+      background: $topFooterIconsBgColor;
+      border-radius: $globalBorderRadius;
+      display: block;
+      height: 34px;
+      width: 34px;
+    }
+  }
+
+  &__icon {
+    &--email {
+      fill: $topFooterIconEmailColor;
+      height: 32px;
+      width: 32px;
+    }
+
+    &--right-arrow {
+      display: block;
+      fill: $topFooterIconsTextColor;
+      height: 32px;
+      width: 19px;
+    }
+
+    &--youtube,
+    &--twitter,
+    &--instagram {
+      fill: $topFooterIconsTextColor;
+    }
+
+    &--facebook {
+      fill: $topFooterIconsBgColor;
+      color: $topFooterIconsTextColor;
+    }
+  }
+}
