@@ -1,6 +1,9 @@
 //local variables
 $notificationColor: $amaranth;
 $dropBorderColor: $alto;
+$langSelectBorderColor: $sanMarino;
+$headerSeparator: $biscay;
+$headerSeparatorDark: $chathamsBlue;
 
 .user-header {
   background-color: $bgPrimaryColor;
@@ -23,7 +26,7 @@ $dropBorderColor: $alto;
 .lang-select {
   padding: 17px 15px;
   font-family: $franklin-medium-cd;
-  border-bottom: 1px solid $borderFifthColor;
+  border-bottom: 1px solid $langSelectBorderColor;
 
   @include tablet {
     background-color: $bgPrimaryDarkColor;
@@ -119,7 +122,7 @@ $dropBorderColor: $alto;
 
 .account-area {
   background-color: $bgPrimaryDarkColor;
-  border-bottom: 1px solid $borderFifthColor;
+  border-bottom: 1px solid $langSelectBorderColor;
   padding: 15px 15px;
   @include tablet {
     border: 0;
@@ -267,7 +270,7 @@ $dropBorderColor: $alto;
   margin: 0 -15px -15px;
   padding: 15px;
   background-color: $bgPrimaryDarkColor;
-  border: 1px solid $borderFifthColor;
+  border: 1px solid $langSelectBorderColor;
   border-width: 1px 0;
   @include tablet {
     border: 0;
@@ -346,6 +349,10 @@ $dropBorderColor: $alto;
       border-radius: 2px;
       @include font-size(13px);
       font-family: $franklin-medium;
+
+      &--hidden {
+        display: none;
+      }
     }
   }
 

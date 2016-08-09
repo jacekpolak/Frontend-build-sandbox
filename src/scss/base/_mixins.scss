@@ -47,8 +47,8 @@
     top: 0;
     bottom: 0;
     width: 1px;
-    background-color: $borderSixColor;
-    border-left: 1px solid $borderSeventhColor;
+    background-color: $headerSeparator;
+    border-left: 1px solid $headerSeparatorDark;
     transform: translateY(0);
   }
   &:after {
@@ -56,4 +56,3 @@
     right: 0;
   }
 }
-
