@@ -245,6 +245,39 @@
       </div>
     </form>
 
+    <!-- FIXME: Just an example and should be removed -->
+    <style>
+      .toggler__content {
+        display: none;
+      }
+
+      .toggler--active .toggler__content {
+        display: block;
+      }
+
+      .some-other-toggler__content {
+        display: none;
+      }
+
+      .some-other-toggler--active .some-other-toggler__content {
+        display: block;
+      }
+    </style>
+    <div class="toggler" data-components="Toggler" data-options='{"Toggler": {"MODIFIERS": {"ACTIVE": "toggler--active"}}}'>
+      <div class="js-trigger">Click me!</div>
+      <div class="toggler__content js-toggling">
+        Some content with <a href="https://google.com">Link</a>
+      </div>
+    </div>
+
+    <div class="some-other-toggler" data-components="Toggler" data-options='{"Toggler": {"EVENT": "dblclick", "CLOSE_OUTSIDE": false, "CLOSE_ON_OTHERS": false, "MODIFIERS": {"ACTIVE": "some-other-toggler--active"}}}'>
+      <div class="js-trigger">Click me!</div>
+      <div class="some-other-toggler__content js-toggling">
+        Some content with <a href="https://google.com">Link</a>
+      </div>
+    </div>
+    <!--  -->
+
     <svg class="svg-icon">
       <use xlink:href="#icon-amway-icons-5-a-day"></use>
     </svg>
