@@ -5,7 +5,6 @@
 }
 
 .title__hero {
-  font-family: $franklin-medium-cd;
   @include font-size(23px);
   @include tablet {
     @include font-size(48px);
@@ -20,9 +19,9 @@
 .hero-curve {
   width: 100%;
   height: 24px;
-  fill: #fff;
+  fill: $white;
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
 }
 
 .hero-play {
@@ -53,7 +52,8 @@
   text-align: center;
   position: absolute;
   top: 30px;
-  margin-top: 30px;
+  margin-top: 15px;
+  line-height: 1;
   width: 100%;
   @include font-size(15px);
   color: $alabaster;
