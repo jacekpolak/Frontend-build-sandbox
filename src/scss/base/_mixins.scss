@@ -56,3 +56,11 @@
     right: 0;
   }
 }
+
+@mixin custom-list-item {
+  padding: 0;
+
+  &:before {
+    display: none;
+  }
+}

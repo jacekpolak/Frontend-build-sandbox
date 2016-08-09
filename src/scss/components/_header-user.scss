@@ -4,9 +4,11 @@ $dropBorderColor: $alto;
 $langSelectBorderColor: $sanMarino;
 $headerSeparator: $biscay;
 $headerSeparatorDark: $chathamsBlue;
+$userHearedBg: $primary;
+$userHearedDarkBg: $regalBlue;
 
 .user-header {
-  background-color: $bgPrimaryColor;
+  background-color: $userHearedBg;
 
   & ~ & {
     margin: 150px 0 0;
@@ -24,12 +26,11 @@ $headerSeparatorDark: $chathamsBlue;
 }
 
 .lang-select {
-  padding: 17px 15px;
   font-family: $franklin-medium-cd;
   border-bottom: 1px solid $langSelectBorderColor;
 
   @include tablet {
-    background-color: $bgPrimaryDarkColor;
+    background-color: $userHearedDarkBg;
     padding: 0;
     border-bottom: 0;
     @include user-header-border;
@@ -39,6 +40,7 @@ $headerSeparatorDark: $chathamsBlue;
     text-decoration: none;
     display: block;
     color: $white;
+    padding: 17px 15px;
 
     @include tablet {
       padding: 6px 8px 5px 12px;
@@ -67,7 +69,7 @@ $headerSeparatorDark: $chathamsBlue;
       margin: 0 10px 0 0;
       
       &--drop {
-        color: $bgPrimaryDarkColor;
+        color: $userHearedDarkBg;
         margin: 0;
       }
     }
@@ -104,7 +106,7 @@ $headerSeparatorDark: $chathamsBlue;
     }
 
     &-item {
-      @extend %custom-list-item;
+      @include custom-list-item;
       padding: 10px 0;
       &:last-child {
         padding-bottom: 0;
@@ -121,7 +123,7 @@ $headerSeparatorDark: $chathamsBlue;
 }
 
 .account-area {
-  background-color: $bgPrimaryDarkColor;
+  background-color: $userHearedDarkBg;
   border-bottom: 1px solid $langSelectBorderColor;
   padding: 15px 15px;
   @include tablet {
@@ -159,7 +161,7 @@ $headerSeparatorDark: $chathamsBlue;
     }
 
     &-item {
-      @extend %custom-list-item;
+      @include custom-list-item;
       float: left;
       margin: 0 14px 0 0;
       &:after {
@@ -181,28 +183,29 @@ $headerSeparatorDark: $chathamsBlue;
       text-decoration: none;
       @include tablet {
         display: block;
-        padding: 8px 12px;
+        padding: 4px 12px;
         @include font-size(13px);
+        line-height: 2;
       }
     }
   }
 
   &__notification {
-    margin: -15px -15px 0;
-    padding: 15px;
-    background-color: $bgPrimaryColor;
     @include tablet {
-      margin: 0;
       padding: 0;
-      background-color: $bgPrimaryDarkColor;
+      background-color: $userHearedDarkBg;
     }
 
     &-link {
+      background-color: $userHearedBg;
+      margin: -15px -15px 0;
+      padding: 15px;
       display: block;
       text-decoration: none;
       color: $white;
       @include tablet {
-        padding: 8px 10px 7px 12px;
+        margin: 0;
+        padding: 4px 10px 4px 12px;
         @include user-header-border;
         &:after {
           display: none;
@@ -217,6 +220,7 @@ $headerSeparatorDark: $chathamsBlue;
       margin: 0 8px 0 0;
       @include tablet {
         margin-right: 0;
+        padding: 3px 0 2px;
       }
 
       svg {
@@ -249,6 +253,7 @@ $headerSeparatorDark: $chathamsBlue;
         margin: 0 0 0 4px;
         font-family: $franklin-medium-cd;
         @include font-size(13px);
+        line-height: 2;
       }
     }
     
@@ -269,7 +274,7 @@ $headerSeparatorDark: $chathamsBlue;
   position: relative;
   margin: 0 -15px -15px;
   padding: 15px;
-  background-color: $bgPrimaryDarkColor;
+  background-color: $userHearedDarkBg;
   border: 1px solid $langSelectBorderColor;
   border-width: 1px 0;
   @include tablet {
@@ -295,7 +300,7 @@ $headerSeparatorDark: $chathamsBlue;
       &-arrow {
         display: inline-block;
         vertical-align: middle;
-        fill: #fff;
+        fill: $white;
         width: 26px;
         height: 14px;
       }
@@ -306,8 +311,8 @@ $headerSeparatorDark: $chathamsBlue;
     display: block;
     text-decoration: none;
     @include tablet {
-      padding: 8px 6px 8px 12px;
-      background-color: $bgPrimaryColor;
+      padding: 4px 6px 4px 12px;
+      background-color: $userHearedBg;
     }
   }
 
@@ -320,6 +325,7 @@ $headerSeparatorDark: $chathamsBlue;
     @include tablet {
       text-transform: none;
       @include font-size(13px);
+      line-height: 2;
       font-family: $franklin-medium;
       vertical-align: middle;
     }
@@ -334,7 +340,7 @@ $headerSeparatorDark: $chathamsBlue;
   }
 
   &__drop {
-    padding: 30px 0 0 30px;
+    padding: 20px 0 0 30px;
     font-family: $franklin-medium-cd;
     @include tablet {
       position: absolute;
@@ -358,13 +364,14 @@ $headerSeparatorDark: $chathamsBlue;
 
   &__list {
     text-transform: uppercase;
+    @include font-size(14px);
     @include tablet {
       text-transform: none;
     }
 
     &-item {
-      @extend %custom-list-item;
-      margin: 0 0 30px;
+      @include custom-list-item;
+      margin: 0 0 10px;
       &:last-child {
         margin: 0;
       }
@@ -382,8 +389,9 @@ $headerSeparatorDark: $chathamsBlue;
       color: $white;
       text-decoration: none;
       display: block;
+      padding: 10px 0;
       @include tablet {
-        color: $bgPrimaryDarkColor;
+        color: $userHearedDarkBg;
         padding: 8px 12px;
       }
     }
