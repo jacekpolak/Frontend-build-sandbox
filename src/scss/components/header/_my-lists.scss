@@ -112,6 +112,7 @@
 
     &__title {
       font-family: $titleFontFamily;
+      @include font-size(14px);
       text-transform: uppercase;
       color: $titleColor;
     }
