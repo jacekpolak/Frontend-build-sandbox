@@ -3,6 +3,7 @@ $topFooterTextColor: $white;
 $topFooterIconsBgColor: $white;
 $topFooterIconsTextColor: $primary;
 $topFooterFont: $franklin-medium-cd;
+$topFooterIconEmailColor: $alto;
 
 .footer {
 
@@ -16,6 +17,7 @@ $topFooterFont: $franklin-medium-cd;
   &__title {
     color: $topFooterTextColor;
     font-family: $topFooterFont;
+    text-transform: uppercase;
 
     @include font-size(16px);
 
@@ -33,27 +35,28 @@ $topFooterFont: $franklin-medium-cd;
     }
 
     .text-input {
+      align-items: center;
       background: $white;
       border: 1px solid $basicInputColor;
-      border-radius: 3px;
+      border-radius: $globalBorderRadius;
       display: flex;
       font-size: 1rem;
       line-height: 2rem;
       margin-bottom: 0;
-      padding: 7px 10px;
+      padding: 6px 10px;
 
       &__focus {
         border-width: 0;
+        height: 32px;
         padding: 0 7px;
       }
+    }
+  }
 
-      @include tablet {
-        width: 350px;
-      }
-
-      @include desktop {
-        width: calc( 100% - 210px);
-      }
+  &__form {
+    width: 100%;
+    @include desktop {
+      width: calc( 100% - 210px);
     }
   }
 
@@ -61,36 +64,45 @@ $topFooterFont: $franklin-medium-cd;
     background-color: transparent;
     border-width: 0;
     cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   &__socialmedia {
     @include desktop {
       display: flex;
+      align-items: center;
       justify-content: flex-end;
+    }
+  }
+
+  &__icons {
+    @include desktop {
+      display: flex;
+      align-items: center;
     }
   }
 
   &__link {
     display: inline-block;
-    margin-right: 10px;
     text-decoration: none;
 
-    @include desktop {
-      vertical-align: middle;
+    &:not(:last-child) {
+      margin-right: 10px;
     }
 
     .svg-icon {
-      background: $white;
-      border-radius: 3px;
+      background: $topFooterIconsBgColor;
+      border-radius: $globalBorderRadius;
       display: block;
-      height: 35px;
-      width: 35px;
+      height: 34px;
+      width: 34px;
     }
   }
 
   &__icon {
     &--email {
-      fill: $alto;
+      fill: $topFooterIconEmailColor;
       height: 32px;
       width: 32px;
     }
