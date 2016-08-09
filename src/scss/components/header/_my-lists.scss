@@ -1,0 +1,138 @@
+.my-lists {
+  $root: &;
+  $listWidth: 250px;
+  $borderWidth: 1px;
+  $index: 1;
+  $sectionStrokeColor: $alto;
+  $listsIconFill: $gray;
+  $indicatorIconFill: $secondary;
+  $plusIconFill: $secondary;
+  $containerBackground: $white;
+  $containerStrokeColor: $borderTertiaryColor;
+  $containerStrokeRadius: $globalBorderRadius;
+  $titleFontFamily: $franklin-medium-cd;
+  $titleColor: $primary;
+
+  // NOTE: I believe this would be inside flex container
+  // So no need to use float
+  float: right;
+
+  &__container {
+    display: none;
+  }
+
+  &__icon,
+  &__indicator {
+    vertical-align: middle;
+  }
+
+  &__icon {
+    width: 35px;
+    height: 35px;
+    fill: $listsIconFill;
+  }
+
+  &__indicator {
+    display: none;
+  }
+
+  @include desktop {
+    position: relative;
+    @include font-size(14px);
+
+    &__direct {
+      display: inline-block;
+      position: relative;
+      z-index: $index + 1;
+      border: $borderWidth solid transparent;
+      border-radius: $containerStrokeRadius $containerStrokeRadius 0 0;
+      padding: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      background: $containerBackground;
+
+      #{$root}:hover & {
+        border-color: $containerStrokeColor $containerStrokeColor transparent;
+      }
+    }
+
+    &__icon,
+    &__indicator {
+      vertical-align: middle;
+    }
+
+    &__indicator {
+      display: inline;
+      width: 18px;
+      height: 17px;
+      fill: $indicatorIconFill;
+
+      #{$root}:hover & {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__container {
+      min-width: $listWidth;
+      position: absolute;
+      z-index: $index;
+      top: 100%;
+      right: 0;
+      margin-top: -$borderWidth;
+      border: $borderWidth solid $containerStrokeColor;
+      border-radius: $containerStrokeRadius 0 $containerStrokeRadius $containerStrokeRadius;
+      padding: 15px;
+      background: $containerBackground;
+
+      #{$root}:hover & {
+        display: block;
+      }
+    }
+
+    &__section {
+      padding-bottom: 18px;
+
+      &:first-child {
+        padding-bottom: 4px;
+      }
+
+      &:last-child {
+        padding-top: 10px;
+        padding-bottom: 0;
+      }
+
+      & ~ & {
+        border-top: 1px solid $sectionStrokeColor;
+        padding-top: 15px;
+      }
+    }
+
+    &__title {
+      font-family: $titleFontFamily;
+      @include font-size(14px);
+      text-transform: uppercase;
+      color: $titleColor;
+    }
+
+    &__add {
+      #{$root}--editable & {
+        display: none;
+      }
+    }
+
+    &__plus {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      fill: $plusIconFill;
+    }
+
+    &__create {
+      display: none;
+
+      #{$root}--editable & {
+        display: block;
+      }
+    }
+  }
+}

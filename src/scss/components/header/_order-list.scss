@@ -1,0 +1,42 @@
+.order-list {
+  $root: &;
+  $titleFontFamily: $franklin-medium;
+  $titleColor: $scarpaFlow;
+  $separatorColor: $alto;
+  $pvHighlight: $primary;
+
+  &__title {
+    font-family: $titleFontFamily;
+    color: $titleColor;
+  }
+
+  &__details {
+    margin-top: 2px;
+  }
+
+  &__state {
+    display: flex;
+
+    & ~ & {
+      margin-top: 7px;
+    }
+
+    &-item {
+      padding-right: 10px;
+
+      & ~ & {
+        padding-left: 10px;
+      }
+
+      &--separated {
+        & ~ & {
+          border-left: 1px solid $separatorColor;
+        }
+      }
+
+      &--pv {
+        color: $pvHighlight;
+      }
+    }
+  }
+}
