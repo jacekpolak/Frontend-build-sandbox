@@ -374,6 +374,7 @@ $userHearedDarkBg: $regalBlue;
       margin: 0 0 10px;
       &:last-child {
         margin: 0;
+        text-transform: uppercase;
       }
       @include tablet {
         border-bottom: 1px solid $dropBorderColor;
