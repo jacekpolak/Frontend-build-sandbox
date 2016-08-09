@@ -2,7 +2,6 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title></title>
   <link rel="stylesheet" href="build/app.css">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -16,6 +15,7 @@
 
 <div data-components="Component" data-options='{"Component": {"option": "value"}}'>
   <div class="container">
+
   <div class="header__cart" tabindex="0" aria-haspopup="true">
     <div class="header__cart-wrapper">
       <a href="#" class="header__cart-icon" title="Go to your cart">
@@ -181,6 +181,24 @@
       </div>
     </div>
 
+  <!-- .header__hero -->
+    <div class="header__hero">
+      <div class="hero-content">
+        <h3 class="title__hero">Take charge of your life<br>start your own business</h3>
+        <p class="hero__description">Start selling great products and<br>become an Amway Business Owner</p>
+        <a href="#" class="btn btn-hero__play">
+          <svg class="svg-icon hero-play">
+            <use xlink:href="#icon-play-circle"></use>
+          </svg>
+          <span>Watch video</span>
+        </a>
+      </div>
+      <img class="hero-image" alt="Hero image" src="./media/hero_BusinessOp.jpg">
+      <!-- seems like can't be processed by svgstore: preserveAspectRatio -->
+      <svg class="hero-curve" viewBox="0 0 2400 32" preserveAspectRatio="none">
+        <path d="M0,0c0,0,563,30,1200,30c706,0,1200-30,1200-30v32H0V0z"/>
+      </svg>
+    </div>
     <h3>My Awesome Component</h3>
     <div class="js-child">Destroy Component</div>
     <div class="js-show-list">Render list</div>
@@ -301,6 +319,39 @@
       </div>
     </form>
 
+    <!-- FIXME: Just an example and should be removed -->
+    <style>
+      .toggler__content {
+        display: none;
+      }
+
+      .toggler--active .toggler__content {
+        display: block;
+      }
+
+      .some-other-toggler__content {
+        display: none;
+      }
+
+      .some-other-toggler--active .some-other-toggler__content {
+        display: block;
+      }
+    </style>
+    <div class="toggler" data-components="Toggler" data-options='{"Toggler": {"MODIFIERS": {"ACTIVE": "toggler--active"}}}'>
+      <div class="js-trigger">Click me!</div>
+      <div class="toggler__content js-toggling">
+        Some content with <a href="https://google.com">Link</a>
+      </div>
+    </div>
+
+    <div class="some-other-toggler" data-components="Toggler" data-options='{"Toggler": {"EVENT": "dblclick", "CLOSE_OUTSIDE": false, "CLOSE_ON_OTHERS": false, "MODIFIERS": {"ACTIVE": "some-other-toggler--active"}}}'>
+      <div class="js-trigger">Click me!</div>
+      <div class="some-other-toggler__content js-toggling">
+        Some content with <a href="https://google.com">Link</a>
+      </div>
+    </div>
+    <!--  -->
+
     <svg class="svg-icon">
       <use xlink:href="#icon-amway-icons-5-a-day"></use>
     </svg>
@@ -308,8 +359,63 @@
     <svg class="svg-icon">
       <use xlink:href="#icon-amway-icons-cart-empty"></use>
     </svg>
+
   </div>
 </div>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div class="container">
+      <div class="row">
+        <div class="footer__newsletter col-sm-12 col-md-6 col-lg-6">
+          <h3 class="footer__title">Sign up for news and offers</h3>
+          <form class="footer__form">
+            <div class="text-input">
+              <svg class="svg-icon footer__icon--email">
+                <use xlink:href="#icon-amway-icons-contact-email" ></use>
+              </svg>
+              <input class="text-input__focus" type="text" placeholder="Your email address" required>
+              <button type="submit" class="footer__btn-submit" value="Sumbit email">
+                <svg class="svg-icon footer__icon--right-arrow">
+                  <use xlink:href="#icon-amway-icons-right-arrow" ></use>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="footer__socialmedia col-sm-12 col-md-6 col-lg-6">
+          <h3 class="footer__title">Connect with us on</h3>
+          <ul class="footer__icons-list">
+            <li class="icons-list__item"><a href="#" class="icons-list__item-a" title="Amway Facebook">
+              <svg class="svg-icon">
+                <use class="footer__icon--facebook" xlink:href="#icon-amway-icons-facebook" ></use>
+              </svg>
+            </a></li>
+            <li class="icons-list__item"><a href="#" class="icons-list__item-a" title="Amway Twitter">
+              <svg class="svg-icon">
+                <use class="footer__icon--twitter" xlink:href="#icon-amway-icons-twitter" ></use>
+              </svg>
+            </a></li>
+            <li class="icons-list__item"><a href="#" class="icons-list__item-a" title="Amway Youtube">
+              <svg class="svg-icon">
+                <use class="footer__icon--youtube" xlink:href="#icon-amway-icons-youtube" ></use>
+              </svg>
+            </a></li>
+            <li class="icons-list__item"><a href="#" class="icons-list__item-a" class="Amway Instagram">
+              <svg class="svg-icon">
+                <use class="footer__icon--instagram" xlink:href="#icon-amway-icons-instagram" ></use>
+              </svg>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__body"></div>
+  <div class="footer__copyrights">
+    <p>&copy; 2011-2016 Amway Europe. All rights reserved.</p>
+  </div>
+</footer>
 
 <!-- NOTE: Define external libs -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
