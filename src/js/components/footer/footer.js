@@ -13,7 +13,7 @@ const DEFAULTS = {
         // NOTE: Use only js-hooks to elements
         HIDE_LIST: '.js-footer-toogle',
         CHILD_LIST: '.navigation-list',
-        ICON_OPEN: 'footer-category__label-open',
+        ICON_OPEN: '.footer-category__label-open',
         ICON_MINIMIZE: '.footer-category__label-minimize'
     },
     MODIFIERS: {
@@ -64,13 +64,13 @@ export class Footer extends Base {
      * Hide list element from footer
      */
     toggleList(event) {
-        event.preventDefault();
+        // event.preventDefault();
         const footer = this.elements.$root.find(event.currentTarget);
-        footer.find(this.options.MODIFIERS.CHILD_LIST)
+        footer.find(this.options.SELECTORS.CHILD_LIST)
             .toggleClass(this.options.MODIFIERS.HIDE_LIST);
-        footer.find(this.options.MODIFIERS.ICON_OPEN)
+        footer.find(this.options.SELECTORS.ICON_OPEN)
             .toggleClass(this.options.MODIFIERS.HIDE_ICON);
-        footer.find(this.options.MODIFIERS.ICON_MINIMIZE)
+        footer.find(this.options.SELECTORS.ICON_MINIMIZE)
             .toggleClass(this.options.MODIFIERS.HIDE_ICON);
     }
 
