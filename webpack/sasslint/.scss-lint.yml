@@ -4,7 +4,6 @@ linters:
 
   BorderZero:
     enabled: true
-    convention: zero
 
   BemDepth:
     enabled: true
@@ -13,7 +12,7 @@ linters:
     enabled: false
 
   ExtendDirective:
-    enabled: true
+    enabled: false
 
   LeadingZero:
     enabled: false

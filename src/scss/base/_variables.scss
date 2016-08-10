@@ -12,6 +12,11 @@ $divie: #e99619;
 $gold: #fad000;
 $buddhaGold: #b9b309;
 $paleOyster: #9a8c7e;
+$regalBlue: #033e73;
+$amaranth: #ed2b55;
+$biscay: #18375e;
+$chathamsBlue: #194e7e;
+$lightGray: #f0f0f0;
 
 // typography and backgrounds
 $scarpaFlow: #56565a;
@@ -20,7 +25,6 @@ $alto: #dadada;
 $gallery: #ededed;
 $alabaster: #f7f7f7;
 $white: #fff;
-$lightGray: #f0f0f0;
 
 // brand product colors
 $artistry: #a29061;
@@ -30,6 +34,7 @@ $home: #4e8e2c;
 $nutrilite: #0b6527;
 $satinique: #919295;
 $truvivity: #87c3c4;
+$sanMarino: #3e709c;
 
 // common variables
 $baseFontColor: $scarpaFlow;
@@ -49,6 +54,10 @@ $btnOnDarkBgColor: $white;
 $btnTxtColor: $white;
 $btnTertiaryTxtColor: $scarpaFlow;
 $btnOnDarkTxtColor: $primary;
+
+// bg styles
+$bgPrimaryColor: $primary;
+$bgPrimaryDarkColor: darken($primary, 1%);
 
 // forms styles
 $basicInputColor: $alto;
