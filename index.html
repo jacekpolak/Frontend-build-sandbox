@@ -13,190 +13,202 @@
 <!-- NOTE: Extra options could be provided via data-options attribute with key for each Component options -->
 <!-- NOTE: Please be aware data-options should have a valid JSON value -->
 
+<div class="container">
+<div class="header__cart" tabindex="0" aria-haspopup="true">
+  <div class="header__cart-wrapper">
+    <a href="#" class="header__cart-icon" title="Go to your cart">
+      <!-- <svg class="svg-icon">
+        <use xlink:href="#icon-amway-icons-cart-empty"></use>
+      </svg> -->
+      <!-- <svg class="svg-icon">
+        <use xlink:href="#icon-amway-icons-cart-filled"></use>
+      </svg> -->
+      <svg class="svg-icon">
+        <use xlink:href="#icon-amway-icons-cart-items"></use>
+      </svg>
+      <span class="cart-products-number">12</span>
+    </a>
+
+    <div class="cart-info">
+      <div class="cart-info__pv">PV: <span class="cart-info__pv-ammount">46</span></div>
+      <div class="cart-info__price">
+        <span class="price">£49.60</span>
+      </div>
+    </div>
+
+    <a href="#" class="btn btn--secondary btn--thin">
+      <span>Checkout</span>
+    </a>
+  </div>
+
+  <div class="shopping-cart">
+    <div class="shopping-cart__inner">
+      <div class="shopping-cart__title">
+        <h3 class="shopping-cart__title-header">Recently added items</h3>
+        <div class="shopping-cart__p-ammount">1 ITEM</div>
+      </div>
+
+      <ul class="shopping-cart__basket">
+        <li class="shopping-cart__item">
+          <div class="shopping-cart__item-content">
+            <figure class="shopping-cart__img">
+              <img src="media/product-1.jpg">
+            </figure>
+            <a href="/products/productId" class="shopping-cart__product">
+              <div class="shopping-cart__p-title">Vitamin C Plus Extended Release Family Size</div>
+              <div class="shopping-cart__p-qant">
+                <div>
+                  <strong>Qty:</strong>
+                  <span class="shopping-cart__p-quant">1</span> x <span class="shopping-cart__p-price">£49.60</span>
+                </div>
+                <div class="shopping-cart__p-total">
+                  £<span>49.60</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <a href="#" class="shopping-cart__remove" title="Remove product">
+            <svg class="svg-icon">
+              <use xlink:href="#icon-amway-icons-cancel"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="shopping-cart__item">
+          <div class="shopping-cart__item-content">
+            <figure class="shopping-cart__img">
+              <img src="media/product-1.jpg">
+            </figure>
+            <a href="/products/productId" class="shopping-cart__product">
+              <div class="shopping-cart__p-title">Vitamin C Plus Extended Release Family Size</div>
+              <div class="shopping-cart__p-desc">
+                <strong>Color:</strong> Spice Bronze
+              </div>
+              <div class="shopping-cart__p-qant">
+                <div>
+                  <strong>Qty:</strong>
+                  <span class="shopping-cart__p-quant">1</span> x <span class="shopping-cart__p-price">£49.60</span>
+                </div>
+                <div class="shopping-cart__p-total">
+                  £<span>49.60</span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <a href="#" class="shopping-cart__remove" title="Remove product">
+            <svg class="svg-icon">
+              <use xlink:href="#icon-amway-icons-cancel"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="shopping-cart__total">
+      <div class="shopping-cart__subtotal">
+        <div>Cart subtotal:</div>
+        <div class="shopping-cart__subtotal-price">
+          <span>£</span><span class="shopping-cart__subtotal-item">49.60</span>
+        </div>
+      </div>
+
+      <div class="shopping-cart__btn">
+        <a href="#" class="btn btn--secondary btn--thin">
+          <span>Checkout</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- / .header__cart -->
+
+<div data-components="MyLists" class="my-lists">
+  <a class="my-lists__direct" href="#">
+    <svg class="svg-icon my-lists__icon">
+      <use xlink:href="#icon-amway-icons-my-list"></use>
+    </svg>
+    <svg class="svg-icon my-lists__indicator">
+      <use xlink:href="#icon-amway-icons-down-arrowhead"></use>
+    </svg>
+  </a>
+  <div class="my-lists__container">
+    <section class="my-lists__section">
+      <h3 class="my-lists__title">My Lists</h3>
+    </section>
+    <section class="my-lists__section">
+      <div class="order-list">
+        <div class="order-list__title">List 1: Favourites</div>
+        <div class="order-list__details">
+          <div class="order-list__state">
+            <div class="order-list__state-item order-list__state-item--separated">5 items</div>
+            <div class="order-list__state-item order-list__state-item--separated order-list__state-item--pv">50PV</div>
+            <div class="order-list__state-item order-list__state-item--separated">$10.25</div>
+          </div>
+          <div class="order-list__state">
+            <div class="order-list__state-item"><a href="#">View order</a></div>
+            <div class="order-list__state-item"><a href="#">Move to cart</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="my-lists__section">
+      <div class="order-list">
+        <div class="order-list__title">List 2: Fred Smith</div>
+        <div class="order-list__details">
+          <div class="order-list__state">
+            <div class="order-list__state-item order-list__state-item--separated">1 item</div>
+            <div class="order-list__state-item order-list__state-item--separated order-list__state-item--pv">10PV</div>
+            <div class="order-list__state-item order-list__state-item--separated">$10.25</div>
+          </div>
+          <div class="order-list__state">
+            <div class="order-list__state-item"><a href="#">View order</a></div>
+            <div class="order-list__state-item"><a href="#">Move to cart</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="my-lists__section">
+      <div class="my-lists__add">
+        <svg class="svg-icon my-lists__plus">
+          <use xlink:href="#icon-amway-icons-open"></use>
+        </svg>
+        <a href="#">Create a new list</a>
+      </div>
+    </section>
+  </div>
+</div>
+</div>
+
+<nav class="nav">
+  <div class="container">
+    <ul class="main-nav">
+      <li class="main-nav__item">
+        <a href="#" class="main-nav__item-a">
+          <svg class="svg-icon icon-hamburger">
+            <use xlink:href="#icon-amway-icons-hamburger"></use>
+          </svg>
+          Shop by category
+        </a>
+        <ul class="category-list">
+          <li class="category-nav__item"><a href="#" class="category-nav__item-a link-nutrition">Nutrition</a></li>
+          <li class="category-nav__item"><a href="#" class="category-nav__item-a link-beauty">Beauty</a></li>
+          <li class="category-nav__item"><a href="#" class="category-nav__item-a link-personal-care">Personal care</a></li>
+          <li class="category-nav__item"><a href="#" class="category-nav__item-a link-home-life">Home life</a></li>
+        </ul>
+      </li>
+      <li class="main-nav__item"><a href="#" class="main-nav__item-a">Top deals</a></li>
+      <li class="main-nav__item"><a href="#" class="main-nav__item-a">About Amway</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
 <div data-components="Component" data-options='{"Component": {"option": "value"}}'>
   <div class="container">
 
-  <div class="header__cart" tabindex="0" aria-haspopup="true">
-    <div class="header__cart-wrapper">
-      <a href="#" class="header__cart-icon" title="Go to your cart">
-        <!-- <svg class="svg-icon">
-          <use xlink:href="#icon-amway-icons-cart-empty"></use>
-        </svg> -->
-        <!-- <svg class="svg-icon">
-          <use xlink:href="#icon-amway-icons-cart-filled"></use>
-        </svg> -->
-        <svg class="svg-icon">
-          <use xlink:href="#icon-amway-icons-cart-items"></use>
-        </svg>
-        <span class="cart-products-number">12</span>
-      </a>
 
-      <div class="cart-info">
-        <div class="cart-info__pv">PV: <span class="cart-info__pv-ammount">46</span></div>
-        <div class="cart-info__price">
-          <span class="price">£49.60</span>
-        </div>
-      </div>
-
-      <a href="#" class="btn btn--secondary btn--thin">
-        <span>Checkout</span>
-      </a>
-    </div>
-
-    <div class="shopping-cart">
-      <div class="shopping-cart__inner">
-        <div class="shopping-cart__title">
-          <h3 class="shopping-cart__title-header">Recently added items</h3>
-          <div class="shopping-cart__p-ammount">1 ITEM</div>
-        </div>
-
-        <ul class="shopping-cart__basket">
-          <li class="shopping-cart__item">
-            <div class="shopping-cart__item-content">
-              <figure class="shopping-cart__img">
-                <img src="media/product-1.jpg">
-              </figure>
-              <a href="/products/productId" class="shopping-cart__product">
-                <div class="shopping-cart__p-title">Vitamin C Plus Extended Release Family Size</div>
-                <div class="shopping-cart__p-qant">
-                  <div>
-                    <strong>Qty:</strong>
-                    <span class="shopping-cart__p-quant">1</span> x <span class="shopping-cart__p-price">£49.60</span>
-                  </div>
-                  <div class="shopping-cart__p-total">
-                    £<span>49.60</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <a href="#" class="shopping-cart__remove" title="Remove product">
-              <svg class="svg-icon">
-                <use xlink:href="#icon-amway-icons-cancel"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="shopping-cart__item">
-            <div class="shopping-cart__item-content">
-              <figure class="shopping-cart__img">
-                <img src="media/product-1.jpg">
-              </figure>
-              <a href="/products/productId" class="shopping-cart__product">
-                <div class="shopping-cart__p-title">Vitamin C Plus Extended Release Family Size</div>
-                <div class="shopping-cart__p-desc">
-                  <strong>Color:</strong> Spice Bronze
-                </div>
-                <div class="shopping-cart__p-qant">
-                  <div>
-                    <strong>Qty:</strong>
-                    <span class="shopping-cart__p-quant">1</span> x <span class="shopping-cart__p-price">£49.60</span>
-                  </div>
-                  <div class="shopping-cart__p-total">
-                    £<span>49.60</span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <a href="#" class="shopping-cart__remove" title="Remove product">
-              <svg class="svg-icon">
-                <use xlink:href="#icon-amway-icons-cancel"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-      <div class="shopping-cart__total">
-        <div class="shopping-cart__subtotal">
-          <div>Cart subtotal:</div>
-          <div class="shopping-cart__subtotal-price">
-            <span>£</span><span class="shopping-cart__subtotal-item">49.60</span>
-          </div>
-        </div>
-
-        <div class="shopping-cart__btn">
-          <a href="#" class="btn btn--secondary btn--thin">
-            <span>Checkout</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <!-- / .header__cart -->
-
-  <div data-components="MyLists" class="my-lists">
-      <a class="my-lists__direct" href="#">
-        <svg class="svg-icon my-lists__icon">
-          <use xlink:href="#icon-amway-icons-my-list"></use>
-        </svg>
-        <svg class="svg-icon my-lists__indicator">
-          <use xlink:href="#icon-amway-icons-down-arrowhead"></use>
-        </svg>
-      </a>
-      <div class="my-lists__container">
-        <section class="my-lists__section">
-          <h3 class="my-lists__title">My Lists</h3>
-        </section>
-        <section class="my-lists__section">
-          <div class="order-list">
-            <div class="order-list__title">List 1: Favourites</div>
-            <div class="order-list__details">
-              <div class="order-list__state">
-                <div class="order-list__state-item order-list__state-item--separated">5 items</div>
-                <div class="order-list__state-item order-list__state-item--separated order-list__state-item--pv">50PV</div>
-                <div class="order-list__state-item order-list__state-item--separated">$10.25</div>
-              </div>
-              <div class="order-list__state">
-                <div class="order-list__state-item"><a href="#">View order</a></div>
-                <div class="order-list__state-item"><a href="#">Move to cart</a></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="my-lists__section">
-          <div class="order-list">
-            <div class="order-list__title">List 2: Fred Smith</div>
-            <div class="order-list__details">
-              <div class="order-list__state">
-                <div class="order-list__state-item order-list__state-item--separated">1 item</div>
-                <div class="order-list__state-item order-list__state-item--separated order-list__state-item--pv">10PV</div>
-                <div class="order-list__state-item order-list__state-item--separated">$10.25</div>
-              </div>
-              <div class="order-list__state">
-                <div class="order-list__state-item"><a href="#">View order</a></div>
-                <div class="order-list__state-item"><a href="#">Move to cart</a></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="my-lists__section">
-          <div class="my-lists__add">
-            <svg class="svg-icon my-lists__plus">
-              <use xlink:href="#icon-amway-icons-open"></use>
-            </svg>
-            <a href="#">Create a new list</a>
-          </div>
-        </section>
-      </div>
-    </div>
-
-  <div class="container">
-    <nav class="navbar">
-    <ul>
-      <li>Shop by category
-        <ul>
-          <li>Nutrition</li>
-          <li>Beauty</li>
-          <li>Personal care</li>
-          <li>Home life</li>
-        </ul>
-      </li>
-      <li>Top deals</li>
-      <li>About Amway</li>
-    </ul>
-  </nav>
-  </div>
   <!-- .header__hero -->
     <div class="header__hero">
       <div class="hero-content">

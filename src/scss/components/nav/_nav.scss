@@ -1,0 +1,97 @@
+$navIconColor: $secondary;
+$navBorderColor: $alabaster;
+$navBaseColor: $primary;
+$navFont: $franklin-medium-cd;
+
+.nav {
+  border-bottom: 1px solid $navBorderColor;
+  border-top: 1px solid $navBorderColor;
+}
+
+.main-nav {
+
+  display: flex;
+
+  .icon-hamburger {
+    fill: $navIconColor;
+    height: 30px;
+    //display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    //top: -2px;
+    //position: relative;
+  }
+
+  &__item {
+    border-left: 1px solid $navBorderColor;
+    padding: 0;
+    position: relative;
+
+    &:before {
+      content: "";
+      height: 0;
+      width: 0;
+    }
+
+    &-a {
+      font-family: $navFont;
+      @include font-size(16px);
+      padding: 17px 30px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    > .category-list {
+      //display: none;
+      display: block;
+    }
+
+    &:hover > .category-list {
+      display: block;
+    }
+  }
+
+  .category-nav {
+    background-color: $white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+
+    &__item {
+
+      &-a {
+        font-family: $navFont;
+        @include font-size(16px);
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &.link-nutrition {
+          color: $seaGreen;
+          border-color: $seaGreen;
+        }
+
+        &.link-beauty {
+          color: $tertiary;
+          border-color: $tertiary;
+        }
+
+        &.link-personal-care {
+          color: $gold;
+          border-color: $gold;
+        }
+
+        &.link-home-life {
+          color: $disco;
+          border-color: $disco;
+        }
+      }
+
+
+    }
+
+
+
+
+  }
+
+}

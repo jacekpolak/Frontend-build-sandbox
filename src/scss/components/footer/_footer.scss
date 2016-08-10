@@ -49,6 +49,9 @@ $topFooterIconEmailColor: $alto;
         border-width: 0;
         height: 32px;
         padding: 0 7px;
+        -webkit-appearance: value;
+        -moz-appearance:    value;
+        appearance:         value;
       }
     }
   }
