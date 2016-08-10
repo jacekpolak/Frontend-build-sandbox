@@ -2,6 +2,7 @@ $_white: $white;
 $_alabaster: $alabaster;
 
 .header__hero {
+  clear: both;
   position: relative;
   max-width: 100%;
   min-width: 320px;
@@ -26,6 +27,7 @@ $_alabaster: $alabaster;
   fill: $_white;
   position: absolute;
   bottom: -1px;
+  left: 0;
 }
 
 .hero-play {
@@ -55,9 +57,10 @@ $_alabaster: $alabaster;
 .hero-content {
   text-align: center;
   position: absolute;
-  top: 30px;
+  margin-top: 30px;
   line-height: 1;
-  width: 100%;
+  left: 0;
+  right: 0;
   @include font-size(15px);
   color: $_alabaster;
 

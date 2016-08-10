@@ -35,3 +35,32 @@
     @content;
   }
 }
+
+@mixin user-header-border {
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: $headerSeparator;
+    border-left: 1px solid $headerSeparatorDark;
+    transform: translateY(0);
+  }
+  &:after {
+    left: auto;
+    right: 0;
+  }
+}
+
+@mixin custom-list-item {
+  padding: 0;
+
+  &:before {
+    display: none;
+  }
+}

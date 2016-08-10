@@ -1,0 +1,400 @@
+//local variables
+$notificationColor: $amaranth;
+$dropBorderColor: $alto;
+$langSelectBorderColor: $sanMarino;
+$headerSeparator: $biscay;
+$headerSeparatorDark: $chathamsBlue;
+$userHearedBg: $primary;
+$userHearedDarkBg: $regalBlue;
+
+.user-header {
+  background-color: $userHearedBg;
+
+  & ~ & {
+    margin: 150px 0 0;
+  }
+
+  &__wrapper {
+    margin: 0 -15px;
+
+    @include tablet {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.lang-select {
+  font-family: $franklin-medium-cd;
+  border-bottom: 1px solid $langSelectBorderColor;
+
+  @include tablet {
+    background-color: $userHearedDarkBg;
+    padding: 0;
+    border-bottom: 0;
+    @include user-header-border;
+  }
+  
+  &__link {
+    text-decoration: none;
+    display: block;
+    color: $white;
+    padding: 17px 15px;
+
+    @include tablet {
+      padding: 6px 8px 5px 12px;
+    }
+  }
+
+  &__icon {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+      vertical-align: middle;
+      fill: $white;
+      width: 26px;
+      height: 14px;
+    }
+  }
+
+  &__desc {
+    display: inline-block;
+    vertical-align: middle;
+
+    @include tablet {
+      @include font-size(13px);
+      font-family: $franklin-medium;
+      margin: 0 10px 0 0;
+      
+      &--drop {
+        color: $userHearedDarkBg;
+        margin: 0;
+      }
+    }
+  }
+
+  &__flag {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -1px 8px 0 0;
+  }
+
+  &__drop {
+    @include tablet {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: $white;
+      box-shadow: 1px 1px 9px rgba($dropBorderColor, .2);
+      border: 1px solid $dropBorderColor;
+      border-top-width: 0;
+      border-radius: 2px;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__list {
+    padding: 10px 0 0;
+    @include tablet {
+      padding: 0;
+    }
+
+    &-item {
+      @include custom-list-item;
+      padding: 10px 0;
+      &:last-child {
+        padding-bottom: 0;
+      }
+      @include tablet {
+        padding: 0;
+        border-bottom: 1px solid $dropBorderColor;
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+.account-area {
+  background-color: $userHearedDarkBg;
+  border-bottom: 1px solid $langSelectBorderColor;
+  padding: 15px 15px;
+  @include tablet {
+    border: 0;
+    padding: 0;
+    &--logged {
+      display: flex;
+    }
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    fill: $white;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 8px 0 0;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-family: $franklin-medium-cd;
+    @include tablet {
+      font-family: $franklin-medium;
+      @include user-header-border;
+      &:after {
+        display: none;
+      }
+    }
+
+    &-item {
+      @include custom-list-item;
+      float: left;
+      margin: 0 14px 0 0;
+      &:after {
+        content: "/";
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        color: $white;
+        transform: translateY(-50%);
+      }
+      @include tablet {
+        margin: 0;
+        @include user-header-border;
+      }
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+      @include tablet {
+        display: block;
+        padding: 4px 12px;
+        @include font-size(13px);
+        line-height: 2;
+      }
+    }
+  }
+
+  &__notification {
+    @include tablet {
+      padding: 0;
+      background-color: $userHearedDarkBg;
+    }
+
+    &-link {
+      background-color: $userHearedBg;
+      margin: -15px -15px 0;
+      padding: 15px;
+      display: block;
+      text-decoration: none;
+      color: $white;
+      @include tablet {
+        margin: 0;
+        padding: 4px 10px 4px 12px;
+        @include user-header-border;
+        &:after {
+          display: none;
+        }
+      }
+    }
+    
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      margin: 0 8px 0 0;
+      @include tablet {
+        margin-right: 0;
+        padding: 3px 0 2px;
+      }
+
+      svg {
+        fill: $white;
+        width: 21px;
+        height: 21px;
+        vertical-align: top;
+      }
+
+      &--has-notification {
+        &:before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 1px;
+          height: 7px;
+          width: 7px;
+          border-radius: 50%;
+          background: $notificationColor;
+          border: 1px solid $borderPrimaryColor;
+        }
+      }
+    }
+
+    &-pv {
+      display: none;
+      @include tablet {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 0 4px;
+        font-family: $franklin-medium-cd;
+        @include font-size(13px);
+        line-height: 2;
+      }
+    }
+    
+    &-num {
+      color: $white;
+      text-transform: uppercase;
+      display: inline-block;
+      vertical-align: middle;
+      font-family: $franklin-medium-cd;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
+
+.user-area {
+  position: relative;
+  margin: 0 -15px -15px;
+  padding: 15px;
+  background-color: $userHearedDarkBg;
+  border: 1px solid $langSelectBorderColor;
+  border-width: 1px 0;
+  @include tablet {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    @include user-header-border;
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: top;
+    fill: $white;
+    margin: 0 8px 0 0;
+
+    &-arrow {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+      &-arrow {
+        display: inline-block;
+        vertical-align: middle;
+        fill: $white;
+        width: 26px;
+        height: 14px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    @include tablet {
+      padding: 4px 6px 4px 12px;
+      background-color: $userHearedBg;
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    color: $white;
+    display: inline-block;
+    vertical-align: top;
+    font-family: $franklin-medium-cd;
+    @include tablet {
+      text-transform: none;
+      @include font-size(13px);
+      line-height: 2;
+      font-family: $franklin-medium;
+      vertical-align: middle;
+    }
+  }
+
+  &__pv {
+    display: block;
+    @include font-size(14px);
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__drop {
+    padding: 20px 0 0 30px;
+    font-family: $franklin-medium-cd;
+    @include tablet {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding: 0;
+      min-width: 160px;
+      background-color: $white;
+      box-shadow: 1px 1px 9px rgba($dropBorderColor, .2);
+      border: 1px solid $dropBorderColor;
+      border-top-width: 0;
+      border-radius: 2px;
+      @include font-size(13px);
+      font-family: $franklin-medium;
+
+      &--hidden {
+        display: none;
+      }
+    }
+  }
+
+  &__list {
+    text-transform: uppercase;
+    @include font-size(14px);
+    @include tablet {
+      text-transform: none;
+    }
+
+    &-item {
+      @include custom-list-item;
+      margin: 0 0 10px;
+      &:last-child {
+        margin: 0;
+        text-transform: uppercase;
+      }
+      @include tablet {
+        border-bottom: 1px solid $dropBorderColor;
+        padding: 0;
+        margin: 0;
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+    
+    a {
+      color: $white;
+      text-decoration: none;
+      display: block;
+      padding: 10px 0;
+      @include tablet {
+        color: $userHearedDarkBg;
+        padding: 8px 12px;
+      }
+    }
+  }
+}
