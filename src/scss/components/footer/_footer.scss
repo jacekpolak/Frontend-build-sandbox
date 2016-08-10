@@ -327,7 +327,10 @@
     }
 
     &:first-child {
-    padding-left: 0;
+      padding-left: 0;
+    }
+    &:last-child {
+      border-bottom-width: 0;
     }
   }
 
