@@ -1,11 +1,15 @@
-$topFooterBgColor: $tertiary;
-$topFooterTextColor: $white;
-$topFooterIconsBgColor: $white;
-$topFooterIconsTextColor: $primary;
-$topFooterFont: $franklin-medium-cd;
-$topFooterIconEmailColor: $alto;
-
 .footer {
+  //Newsletter section
+  $topFooterBgColor: $tertiary;
+  $topFooterTextColor: $white;
+  $topFooterIconsBgColor: $white;
+  $topFooterIconsTextColor: $primary;
+  $topFooterFont: $franklin-medium-cd;
+  $topFooterIconEmailColor: $alto;
+  $footerGray: $alabaster;
+  $footerChatButtonBackground: $white;
+  $footerDarkGrey: $gallery;
+  $footerCrossColor: $secondary;
 
   &__top {
     background: $topFooterBgColor;
@@ -131,8 +135,287 @@ $topFooterIconEmailColor: $alto;
     }
 
     &--facebook {
-      fill: $topFooterIconsBgColor;
-      color: $topFooterIconsTextColor;
+      fill: $topFooterIconsTextColor;
     }
   }
+
+  // Body section
+  background-color: $footerGray;
+
+  &-toggle-list {
+    border-bottom: 1px solid $footerDarkGrey;
+    font-family: $franklin-medium-cd;
+    padding: 20px 23px;
+  }
+
+  &__wrapper {
+    padding: 0 10px 0 10px;
+  }
+  
+  &-category {
+
+    border-bottom: 1px solid $footerDarkGrey;
+    margin: 0;
+    padding: 20px 0 20px 0;
+
+    &__label {
+      display: block;
+      font-family: $franklin-medium-cd;
+      margin: 0;
+      text-transform: uppercase;
+      &-hide {
+        display: none;
+      }
+      &-open,
+      &-minimize {
+        fill: $footerCrossColor;
+        float: right;
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    &__open:after {
+      clear: both;
+    }
+  }
+
+  .footer-category:nth-last-child(2) {
+    border-bottom-width: 0;
+  }
+
+  &-communication {
+    $footerDarkGrey: $gallery;
+    border-top: 1px solid $footerDarkGrey;
+    padding: 15px 20px 20px 15px;
+
+    &__label {
+      display: none;
+      font-family: $franklin-medium-cd;
+      padding-bottom: 15px;
+      text-transform: uppercase;
+    }
+  }
+
+  &-status {
+    $chatOnline: $seaGreen;
+    $footerChatButtonBackground: $white;
+    color: $footerChatButtonBackground;
+    border-radius: 5px 0 0 5px;
+    background-color: $chatOnline;
+    position: relative;
+    padding: 14px;
+
+    &:before {
+      border-radius: 5px;
+      background-color: white;
+      content: "";
+      display: inline-block;;
+      position: absolute;
+      vertical-align: middle;
+      top: 15px;
+      height: 10px;
+      width: 10px;
+
+    }
+
+    &__info {
+      margin: 0 0 0 20px;
+      line-height: 1;
+    }
+
+  }
+
+  &-video {
+    display: none;
+  }
+
+}
+
+.navigation-list {
+  $footerDarkGrey: $gallery;
+  padding-left: 0;
+  
+  &--is-hiden {
+    display: none;
+  }
+
+  &__item {
+    &:before {
+      content: none;
+    }
+
+    border-bottom: 1px solid $footerDarkGrey;
+
+    &:last-child {
+      border-bottom-width: 0;
+      padding-bottom: 0;
+    }
+
+    &-link {
+      color: $baseFontColor;
+      display: block;
+      padding: 10px 0;
+
+      &:link,
+      &:hover,
+      &:active  {
+        text-decoration: none;
+      }
+    }
+    padding: 10px 23px 13px 0;
+    width: 100%;
+  }
+}
+
+
+.communication-btn {
+  $footerDarkGrey: $gallery;
+  $footerChatButton: $primary;
+  $footerChatButtonBackground: $white;
+  background: $footerChatButtonBackground;
+  border: 1px solid $footerDarkGrey;
+  border-radius: 0 5px 5px 0;
+  color: $footerChatButton;
+  cursor: pointer;
+  @include font-size(16px);
+  padding: 6px 9px;
+  text-decoration: none;
+  text-align: center;
+
+  &:link,
+  &:hover,
+  &:active  {
+    text-decoration: none;
+  }
+
+  &__label {
+    &-icon {
+      background: $footerChatButtonBackground;
+      fill: $footerChatButton;
+      height: 30px;
+      vertical-align: middle;
+      width: 30px;
+    }
+  }
+}
+
+.footer-disclimer {
+  $footerDarkGrey: $gallery;
+  background-color: $footerDarkGrey;
+  text-align: center;
+  margin: 0;
+  padding: 15px 10px;
+
+  &__info {
+    margin: 0;
+    @include font-size(13px);
+  }
+}
+
+.footer-row {
+  clear: both;
+}
+
+@media (min-width: $tablet) {
+  .footer {
+    &-container {
+      display: flex;
+    }
+
+    &-category {
+      $footerDarkGrey: $gallery;
+      border-bottom-width: 0;
+      border-right: 1px solid $footerDarkGrey;
+      padding-left: 15px;
+
+      &__label {
+        padding-bottom: 15px;
+        &-open,
+        &-minimize {
+          display: none;
+        }
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        border-bottom-width: 0;
+      }
+    }
+
+    &-communication__label {
+      display: block;
+    }
+
+    &-list {
+      border-bottom-width: 0;
+      font-weight: normal;
+      padding: 0;
+
+      &__link {
+        @include font-size(14px);
+      }
+    }
+
+    &-row {
+      clear: none;
+      margin-left: 0;
+    }
+
+    &-status {
+      border-radius: 7px 7px 0 0;
+      padding: 0;
+
+      &:before {
+        top: 13px;
+        left: 5px;
+      }
+
+      &__info {
+        padding: 10px 0 8px 0;
+      }
+    }
+
+    &-video {
+      display: block;
+
+      &__youtube {
+        height: 90px;
+        width: 100%;
+      }
+
+      &__link {
+        font-family: $franklin-medium;
+      }
+    }
+
+  }
+
+
+  .navigation-list {
+    display: block;
+    padding: 0 10px 10px 0;
+
+    &__item {
+      border-bottom-width: 0;
+      padding: 0 10px 10px 0;
+      @include font-size(14px);
+      &-link {
+        padding: 0;
+      }
+    }
+  }
+
+  .communication-btn {
+    border-radius: 0;
+    &__label {
+      margin: 0;
+      &-item {
+        vertical-align: middle;
+      }
+    }
+  }
+
 }
