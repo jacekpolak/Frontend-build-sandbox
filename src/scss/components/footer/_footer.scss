@@ -163,6 +163,7 @@
     }
 
     &__label {
+      display: block;
       font-family: $franklin-medium-cd;
       margin: 0;
       text-transform: uppercase;
@@ -190,6 +191,9 @@
 
     &__label {
       display: none;
+      font-family: $franklin-medium-cd;
+      padding-bottom: 15px;
+      text-transform: uppercase;
     }
   }
 
@@ -250,6 +254,7 @@
     &-link {
       color: $baseFontColor;
       display: block;
+      padding: 10px 0;
 
       &:link,
       &:hover,
@@ -257,7 +262,7 @@
         text-decoration: none;
       }
     }
-    padding: 20px 23px 23px 0;
+    padding: 10px 23px 13px 0;
     width: 100%;
   }
 }
@@ -312,32 +317,77 @@
 }
 
 @media (min-width: $tablet) {
-  .footer-row {
-    clear: none;
-  }
+  .footer {
+    &-category {
+      $footerDarkGrey: $gallery;
+      border-bottom-width: 0;
+      border-right: 1px solid $footerDarkGrey;
+      min-height: 230px;
+      padding-left: 15px;
 
-  .footer-category {
-    $footerDarkGrey: $gallery;
-    border-bottom-width: 0;
-    border-right: 1px solid $footerDarkGrey;
-    height: 230px;
-    padding-left: 15px;
+      &__label {
+        padding-bottom: 15px;
+        &-open,
+        &-minimize {
+          display: none;
+        }
+      }
 
-    &__label {
-      padding-bottom: 15px;
-      &-open,
-      &-minimize {
-        display: none;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        border-bottom-width: 0;
       }
     }
 
-    &:first-child {
-      padding-left: 0;
+    &-communication__label {
+      display: block;
     }
-    &:last-child {
+
+    &-list {
       border-bottom-width: 0;
+      font-weight: normal;
+      padding: 0;
+
+      &__link {
+        @include font-size(14px);
+      }
     }
+
+    &-row {
+      clear: none;
+    }
+
+    &-status {
+      border-radius: 7px 7px 0 0;
+      padding: 0;
+
+      &:before {
+        top: 13px;
+        left: 5px;
+      }
+
+      &__info {
+        padding: 10px 0 8px 0;
+      }
+    }
+
+    &-video {
+      display: block;
+
+      &__youtube {
+        height: 90px;
+        width: 100%;
+      }
+
+      &__link {
+        font-family: $franklin-medium;
+      }
+    }
+
   }
+
 
   .navigation-list {
     display: block;
@@ -347,30 +397,6 @@
       border-bottom-width: 0;
       padding: 0 10px 10px 0;
       @include font-size(14px);
-    }
-  }
-
-  .footer-list {
-    border-bottom-width: 0;
-    font-weight: normal;
-    padding: 0;
-
-    &__link {
-      @include font-size(14px);
-    }
-  }
-
-  .footer-status {
-    border-radius: 7px 7px 0 0;
-    padding: 0;
-
-    &:before {
-      top: 13px;
-      left: 5px;
-    }
-
-    &__info {
-      padding: 10px 0 8px 0;
     }
   }
 
@@ -384,16 +410,4 @@
     }
   }
 
-  .footer-video {
-    display: block;
-
-    &__youtube {
-      height: 90px;
-      width: 100%;
-    }
-
-    &__link {
-      font-family: $franklin-medium;
-    }
-  }
 }
