@@ -158,10 +158,6 @@
     margin: 0;
     padding: 20px 0 20px 0;
 
-    &:last-child {
-      border-bottom-width: 0;
-    }
-
     &__label {
       display: block;
       font-family: $franklin-medium-cd;
@@ -182,6 +178,10 @@
     &__open:after {
       clear: both;
     }
+  }
+
+  .footer-category:nth-last-child(2) {
+    border-bottom-width: 0;
   }
 
   &-communication {
@@ -234,7 +234,8 @@
 
 .navigation-list {
   $footerDarkGrey: $gallery;
-
+  padding-left: 0;
+  
   &--is-hiden {
     display: none;
   }
@@ -318,11 +319,14 @@
 
 @media (min-width: $tablet) {
   .footer {
+    &-container {
+      display: flex;
+    }
+
     &-category {
       $footerDarkGrey: $gallery;
       border-bottom-width: 0;
       border-right: 1px solid $footerDarkGrey;
-      min-height: 230px;
       padding-left: 15px;
 
       &__label {
@@ -357,6 +361,7 @@
 
     &-row {
       clear: none;
+      margin-left: 0;
     }
 
     &-status {
@@ -397,6 +402,9 @@
       border-bottom-width: 0;
       padding: 0 10px 10px 0;
       @include font-size(14px);
+      &-link {
+        padding: 0;
+      }
     }
   }
 
