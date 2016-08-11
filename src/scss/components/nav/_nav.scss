@@ -1,7 +1,29 @@
 $navIconColor: $secondary;
-$navBorderColor: $alabaster;
+$navBorderColor: $alto;
+$navCategoryBgColor: $alabaster;
 $navBaseColor: $primary;
 $navFont: $franklin-medium-cd;
+
+@mixin navItemCategory($color) {
+  //item
+  &:hover {
+    border-left: 3px solid $color;
+
+    .category-nav__item-a {
+      padding-left: 42px;
+    }
+  }
+
+  .category-nav__item-a {
+    color: $color;
+    border-bottom: 1px solid $navCategoryBgColor;
+  }
+
+  .sub-category-nav {
+    color: $color;
+  }
+
+}
 
 .nav {
   border-bottom: 1px solid $navBorderColor;
@@ -9,23 +31,146 @@ $navFont: $franklin-medium-cd;
 }
 
 .main-nav {
-
   display: flex;
 
   .icon-hamburger {
     fill: $navIconColor;
     height: 30px;
-    //display: inline-block;
     vertical-align: middle;
     width: 30px;
-    //top: -2px;
-    //position: relative;
+    top: -2px;
+    position: relative;
+  }
+
+  .icon-arrow-down {
+    display: none;
+    fill: $navIconColor;
+    height: 30px;
+    vertical-align: middle;
+    width: 30px;
+    top: -2px;
+    position: relative;
   }
 
   &__item {
+    $root: &;
+
     border-left: 1px solid $navBorderColor;
+    margin: 0;
     padding: 0;
     position: relative;
+
+    &-a {
+      border-top: 3px solid $white;
+      display: inline-block;
+      padding: 7px 30px 10px;
+      position: relative;
+
+      &:hover {
+        border-top-color: $navBaseColor;
+        box-sizing: border-box;
+      }
+    }
+
+    &:first-child {
+      #{$root}-a {
+        padding-left: 10px;
+      }
+    }
+
+    &:hover {
+      .icon-hamburger {
+        display: none;
+      }
+
+      .icon-arrow-down {
+        display: inline;
+      }
+    }
+
+    .category-nav {
+      //display: block;
+    }
+
+    &:hover .icon-hamburger {
+      display: none;
+    }
+
+    &:hover .icon-arrow-down {
+      display: inline;
+    }
+
+    &:hover > .category-nav {
+      display: block;
+    }
+  }
+
+  .category-nav {
+    background-color: $white;
+    border-bottom: 3px solid $navBorderColor;
+    display: none;
+    left: -1px;
+    padding: 0;
+    position: absolute;
+    width: 195px;
+    z-index: 1000;
+
+    &__item {
+      $root: &;
+
+      border-left: 1px solid $navBorderColor;
+      padding-left: 0;
+
+      &:hover {
+        background: $navCategoryBgColor;
+
+        .category-nav__item-a {
+          border-right: 1px solid $navCategoryBgColor;
+        }
+
+        .category-nav__item-div {
+          display: block;
+        }
+      }
+
+      &-a {
+        border-right: 1px solid $navBorderColor;
+        display: block;
+        padding-left: 44px;
+      }
+
+      &-div {
+        background: $navCategoryBgColor;
+        display: none;
+        float: left;
+        position: absolute;
+        top: 0;
+        left: 192px;
+        padding: 0 30px;
+      }
+    }
+
+    .link-nutrition {
+      @include navItemCategory($seaGreen);
+    }
+
+    .link-beauty {
+      @include navItemCategory($tertiary);
+    }
+
+    .link-personal-care {
+      @include navItemCategory($gold);
+    }
+
+    .link-home-life {
+      @include navItemCategory($disco);
+    }
+  }
+}
+
+.main-nav,
+.category-nav {
+  &__item {
 
     &:before {
       content: "";
@@ -36,62 +181,47 @@ $navFont: $franklin-medium-cd;
     &-a {
       font-family: $navFont;
       @include font-size(16px);
-      padding: 17px 30px;
+      height: 50px;
+      line-height: calculateRem(30px);
+      padding: 10px 30px;
       text-decoration: none;
       text-transform: uppercase;
     }
+  }
+}
 
-    > .category-list {
-      //display: none;
-      display: block;
-    }
+.sub-category-nav {
+  font-family: $navFont;
+  padding: 10px 0 0 0;
+  width: 943px;
 
-    &:hover > .category-list {
-      display: block;
-    }
+  &__title {
+    @include font-size(16px);
+    line-height: calculateRem(30px);
   }
 
-  .category-nav {
-    background-color: $white;
-    position: absolute;
-    width: 100%;
-    z-index: 1000;
+  &__item {
+    margin: 0;
+    padding: 0;
 
-    &__item {
+    &:before {
+      content: "";
+      height: 0;
+      width: 0;
+    }
 
-      &-a {
-        font-family: $navFont;
-        @include font-size(16px);
-        text-decoration: none;
-        text-transform: uppercase;
+    &-a {
+      @include font-size(14px);
+      color: $scarpaFlow;
+      height: 50px;
+      line-height: calculateRem(25px);
+      //padding: 10px 30px;
+      text-decoration: none;
 
-        &.link-nutrition {
-          color: $seaGreen;
-          border-color: $seaGreen;
-        }
-
-        &.link-beauty {
-          color: $tertiary;
-          border-color: $tertiary;
-        }
-
-        &.link-personal-care {
-          color: $gold;
-          border-color: $gold;
-        }
-
-        &.link-home-life {
-          color: $disco;
-          border-color: $disco;
-        }
+      &:hover {
+        text-decoration: underline;
+        color: $navBaseColor;
       }
-
-
     }
-
-
-
-
   }
-
 }
