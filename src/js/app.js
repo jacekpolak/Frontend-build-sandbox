@@ -6,6 +6,8 @@ import 'components/toggler/toggler.js';
 import 'components/component1/component1.js';
 import 'components/footer/footer';
 import 'components/myLists/myLists.js';
+import 'components/lazyList/lazyList.js';
+
 import './../scss/app.scss';
 import 'helpers/svg.js';
 
