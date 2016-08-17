@@ -1,5 +1,5 @@
 $navIconColor: $secondary;
-$navBorderColor: $alto;
+$navBorderColor: $gallery;
 $navCategoryBgColor: $alabaster;
 $navBaseColor: $primary;
 $navFont: $franklin-medium-cd;
@@ -12,11 +12,15 @@ $navFont: $franklin-medium-cd;
     .category-nav__item-a {
       padding-left: 42px;
     }
+
+    .category-nav__item-div {
+      opacity: 1;
+    }
   }
 
   .category-nav__item-a {
-    color: $color;
     border-bottom: 1px solid $navCategoryBgColor;
+    color: $color;
   }
 
   .sub-category-nav {
@@ -36,20 +40,20 @@ $navFont: $franklin-medium-cd;
   .icon-hamburger {
     fill: $navIconColor;
     height: 30px;
+    position: relative;
+    top: -2px;
     vertical-align: middle;
     width: 30px;
-    top: -2px;
-    position: relative;
   }
 
   .icon-arrow-down {
     display: none;
     fill: $navIconColor;
     height: 30px;
+    position: relative;
+    top: -2px;
     vertical-align: middle;
     width: 30px;
-    top: -2px;
-    position: relative;
   }
 
   &__item {
@@ -57,18 +61,20 @@ $navFont: $franklin-medium-cd;
 
     border-left: 1px solid $navBorderColor;
     margin: 0;
+    //opacity: 0;
     padding: 0;
     position: relative;
+    //transition: opacity .3s .1s;
 
     &-a {
-      border-top: 3px solid $white;
+      //border-top: 3px solid $white;
       display: inline-block;
       padding: 7px 30px 10px;
       position: relative;
 
       &:hover {
-        border-top-color: $navBaseColor;
-        box-sizing: border-box;
+        //border-top-color: $navBaseColor;
+        //box-sizing: border-box;
       }
     }
 
@@ -79,6 +85,15 @@ $navFont: $franklin-medium-cd;
     }
 
     &:hover {
+      #{$root}-a:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -1px;
+        height: 3px;
+        background: $navBaseColor;
+      }
       .icon-hamburger {
         display: none;
       }
@@ -102,16 +117,19 @@ $navFont: $franklin-medium-cd;
 
     &:hover > .category-nav {
       display: block;
+      opacity: 1;
     }
   }
 
   .category-nav {
     background-color: $white;
     border-bottom: 3px solid $navBorderColor;
-    display: none;
+    //display: none;
     left: -1px;
+    //opacity: 0;
     padding: 0;
     position: absolute;
+    transition: opacity .3s .1s;
     width: 195px;
     z-index: 1000;
 
@@ -129,7 +147,10 @@ $navFont: $franklin-medium-cd;
         }
 
         .category-nav__item-div {
-          display: block;
+          //display: block;
+          opacity: 1;
+          //width: 500px;
+
         }
       }
 
@@ -141,12 +162,22 @@ $navFont: $franklin-medium-cd;
 
       &-div {
         background: $navCategoryBgColor;
-        display: none;
-        float: left;
+        border-bottom: 3px solid $navBorderColor;
+        box-sizing: border-box;
+        //display: none;
+        //display: block;
+        //float: left;
+        height: 203px;
+        left: 192px;
+        opacity: 0;
+        padding: 0 30px;
         position: absolute;
         top: 0;
-        left: 192px;
-        padding: 0 30px;
+        bottom: 0;
+        right: 0;
+        transition: all .3s .1s;
+        z-index: 1;
+        //width: 0;
       }
     }
 
@@ -156,14 +187,26 @@ $navFont: $franklin-medium-cd;
 
     .link-beauty {
       @include navItemCategory($tertiary);
+
+      .category-nav__item-div {
+        top: -50px;
+      }
     }
 
     .link-personal-care {
       @include navItemCategory($gold);
+
+      .category-nav__item-div {
+        top: -100px;
+      }
     }
 
     .link-home-life {
       @include navItemCategory($disco);
+
+      .category-nav__item-div {
+        top: -150px;
+      }
     }
   }
 }
@@ -194,6 +237,10 @@ $navFont: $franklin-medium-cd;
   font-family: $navFont;
   padding: 10px 0 0 0;
   width: 943px;
+
+  &.list-2-col {
+    column-count: 2;
+  }
 
   &__title {
     @include font-size(16px);
